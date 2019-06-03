@@ -1,0 +1,89 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>留言点击提交</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 500px;
+            margin: 50px auto;
+        }
+        #text{
+            width: 494px;
+            height: 100px;
+            border: 1px solid #000;
+            resize: none; /* 让textarea不可以调整大小 */
+        }
+        #inp{
+            float: right;
+        }
+        #list{
+            width: 100%;
+            margin-top: 30px;
+        }
+        #list li{
+            width: 100%;
+            line-height: 22px;
+            font-size: 14px;
+            color: #333;
+            text-indent: 2em;
+            padding: 10px 0;
+            border-bottom: 1px dotted #999;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <textarea id="text"></textarea>
+        <input id="inp" type="button" value="提交">
+        <ul id="list">
+            <!--<li>1111111</li>
+            <li>2222222</li>
+            <li>3333333</li>-->
+        </ul>
+    </div>
+    <script>
+
+        var oText = document.getElementById("text")
+            ,oBtn = document.getElementById("inp")
+            ,oList = document.getElementById("list");
+
+        //点击提交的时候
+        oBtn.onclick = function(){
+            var val = oText.value;
+
+            oText.value = "";
+            //val = "";
+
+            oList.innerHTML += "<li>"+ val +"</li>";
+
+        };
+
+
+
+        /*
+        var css = oText.style;
+
+        css.width = "100px";
+        css.height = "100px";*/
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <p>0000</p>
+    <p class="xx">1111</p>
+    <p>2222</p>
+    <p>3333</p>
+
+    <div>
+        <a href="" class="xx"></a>
+    </div>
+
+    <script>
+
+        /*
+        外部函数 嵌套 内部函数，内部函数使用了外部函数的参数或者变量，咱们称这个内部函数为闭包
+
+        被引用的 参数/变量 不会被回收
+         */
+
+        /*(function(){
+            var a = 10;
+
+            document.onclick = function(){
+                console.log( ++a );
+            };
+        })();*/
+
+        //var aXX = document.getElementsByClassName("xx");
+
+        /*var aP = document.getElementsByTagName("p");
+        for ( var i=0;i<aP.length;i++ ){
+            a(i);
+        }
+
+        function a(number){
+            aP[number].onclick = function(){
+                console.log(number);
+            };
+        }*/
+
+        var aP = document.getElementsByTagName("p");
+        for ( var i=0;i<aP.length;i++ ){ //a
+            (function(i){ //c
+                aP[i].onclick = function(){ //d
+                    console.log(i); //e
+                };
+            })(i); // b
+        }
+        //ab    cde
+
+
+        /*for ( let i=0;i<aP.length;i++ ){
+
+            aP[i].onclick = function(){
+                console.log(i);
+            };
+        }*/
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

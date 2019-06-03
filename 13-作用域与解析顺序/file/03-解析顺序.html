@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        ES5 解析顺序
+            1. 定义阶段
+                先找到当前作用域所有的 var 和 function 关键词
+                var 先把变量名定义出来，但是不会赋值（赋值属于执行阶段）
+                function 先把函数块定义出来
+
+            2. 执行阶段
+                从上到下执行
+         */
+
+
+        /*
+        1. 定义
+            var a;
+
+        2. 执行
+            console.log(a);
+            a = 10;
+        */
+        console.log(a);
+        var a = 10;
+        //console.log(a);
+
+
+
+        /*
+        1. 定义
+            var a;
+            function b(){
+                alert( 1 );
+            }
+        2. 执行
+            b();
+            a = 10;
+
+         */
+
+        /*b();
+        var a = 10;
+        function b(){
+            alert( 1 );
+        }*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

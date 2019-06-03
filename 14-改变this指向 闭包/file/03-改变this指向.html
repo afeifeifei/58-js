@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+
+    </div>
+
+    <script>
+
+
+        var oWrap = document.getElementById("wrap");
+
+        function sum (a,b,c) {
+           console.log(this);
+           console.log(a + b + c);
+        }
+
+
+        //sum.call(oWrap,2,5,3); //错开一位，实参和形参对应
+
+        sum.apply(oWrap,[2,5,3]); //第二个实参是一个数组，里面的数据和形参一一对应
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

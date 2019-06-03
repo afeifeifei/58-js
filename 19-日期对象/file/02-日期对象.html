@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        获取系统时间
+
+         */
+
+        var date = new Date();
+
+        console.dir(date);
+
+        console.log(date.getFullYear()); //年
+        console.log(date.getMonth() + 1); //月
+        console.log(date.getDate()); //日
+
+        console.log(date.getHours()); //时
+        console.log(date.getMinutes()); //分
+        console.log(date.getSeconds()); //秒
+
+        console.log(date.getDay()); //星期
+
+        console.log(date.getTime()); //1970到date时间相差的毫秒数
+
+
+        //转换成格林威治时间 字符串
+        console.log(date.toUTCString());
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

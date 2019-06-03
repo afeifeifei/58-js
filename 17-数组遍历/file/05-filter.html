@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*var arr = [1,5,2,4,80,55,63,24,78];
+
+        var newArr = arr.filter(function(item,index){
+
+            return !(item % 2);
+        });
+
+        console.log(newArr);
+        console.log(arr);*/
+
+        var arr = [
+            {name:"阿飞",age:18}
+            ,{name:"言心",age:35}
+            ,{name:"朝歌",age:40}
+            ,{name:"银时",age:15}
+            ,{name:"心艾",age:17}
+        ];
+
+        var teacher = arr.filter(function(item){
+
+            return item.age <= 20;
+        });
+
+        console.log(teacher);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

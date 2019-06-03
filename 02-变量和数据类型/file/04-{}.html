@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        属性
+            （键值对）属性:值 , 属性:值 , 属性:值 , 属性:值 , 属性:值
+            属性名命名规则和变量名命名规则一样
+         */
+        var afei = {
+            name : "阿飞"
+            ,age : 18
+            ,sex : "男"
+            ,length : 20
+            ,marry : true
+            ,friend : {
+                name : "天天"
+                ,age : 15
+                ,sex : "女"
+            }
+        };
+
+        //获取属性对应的值
+        console.log(afei.name);
+        console.log(afei.friend.name);
+
+        //修改属性值
+        afei.age = 20;
+        console.log(afei.age);
+
+        //添加新属性及值
+        afei.goudan = "狗蛋";
+
+        //删除属性
+        delete afei.sex;
+
+        console.log(afei);
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

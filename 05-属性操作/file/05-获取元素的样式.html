@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+
+    </div>
+    <script>
+
+        var oWrap = document.getElementById("wrap");
+
+        //.style的方式，只能设置或者获取行内样式的值
+        //oWrap.style.width = "200px";
+        //console.log(oWrap.style);
+        //console.log( oWrap.style.width );
+
+        //获取某个元素节点的显示样式对象
+        var s = getComputedStyle( oWrap );
+        console.log(s);
+        console.log(s.height);
+        console.log(s.width);
+        //s.width = "500px"; //这个对象不允许赋值，是一个只读属性
+
+
+        //console.log(getComputedStyle( oWrap ).height);
+        //console.log(getComputedStyle( oWrap ).width);
+        //console.log(getComputedStyle( oWrap ).backgroundColor);
+
+
+        //IE8及以下不支持getComputedStyle，只能用：
+        //var s = obj.currentStyle;
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

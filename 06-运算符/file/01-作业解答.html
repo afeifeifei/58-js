@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #menu{
+            position: relative;
+            width: 180px;
+            height: 180px;
+        }
+
+        /*菜单按钮的样式*/
+        #menu .menu{
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 50%;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+
+        /*小菜单的初始样式*/
+        #menu .small{
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-color: #7cf9d0;
+            line-height: 80px;
+            text-align: center;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: .2s .3s;
+        }
+        #menu .index{left:50px;top:50px;}
+        #menu .article{right:50px;top:50px;}
+        #menu .login{left:50px;bottom:50px;}
+        #menu .reg{right:50px;bottom:50px;}
+
+        /*通过改变名字，就可以得到新的样式*/
+        #menu.show .small{transform: scale(1);}
+        #menu.show .index{left:0;top:0;}
+        #menu.show .article{right:0;top:0;}
+        #menu.show .login{left:0;bottom:0;}
+        #menu.show .reg{right:0;bottom:0;}
+        /*menu大菜单的新样式*/
+        #menu.show .menu{transform: scale(0);}
+
+
+
+        /*#menu .index{}*/
+        /*#menu .index .small{color:#fff}*/
+
+    </style>
+</head>
+<body>
+    
+    <div id="menu">
+        <p class="menu">菜单</p>
+
+        <p class="index small">首页</p>
+        <p class="article small">文章</p>
+        <p class="login small">登录</p>
+        <p class="reg small">注册</p>
+    </div>
+    
+    <script>
+
+        var aMenu = document.getElementsByClassName("menu");
+        var oMenu = document.getElementById("menu");
+            //,aSmall = document.getElementsByClassName("small");
+
+        //给menu添加点击事件
+        aMenu[0].onclick = function(){
+            //给元素自己添加 hide  名字
+            //this.classList.add("hide");
+
+            oMenu.classList.add("show");
+
+            //分别给四个small添加show名字
+            /*aSmall[0].classList.add("show");
+            aSmall[1].classList.add("show");
+            aSmall[2].classList.add("show");
+            aSmall[3].classList.add("show");*/
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

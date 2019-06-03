@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #banner{
+            position: relative;
+            width: 590px;
+            height: 470px;
+            margin: 50px auto;
+            border: 1px solid red;
+        }
+
+        #banner .img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #banner .img ul{
+            width: 100%;
+            height: 100%;
+        }
+        #banner .img ul li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 0;
+            transition: opacity .5s;
+        }
+        #banner .img ul li.active{
+            opacity: 1;
+            z-index: 1;
+        }
+
+        #banner .tab{
+            position: absolute;
+            z-index: 2;
+            bottom: 20px;
+            left: 20px;
+            width: 50%;
+            height: 20px;
+        }
+        #banner .tab ul li{
+            float: left;
+            width: 6px;
+            height: 6px;
+            background-color: transparent;
+            border: 2px solid rgba(255,255,255,.6);
+            border-radius: 100%;
+            margin: 0 5px;
+            cursor: pointer;
+            box-shadow: 0 0 0 4px rgba(255,255,255,0);
+            transition: background-color .3s,border .3s,box-shadow .3s;
+        }
+        #banner .tab ul li.active{
+            background-color : rgba(255,255,255,1);
+            border: 2px solid rgba(255,255,255,1);
+            box-shadow: 0 0 0 4px rgba(255,255,255,.3);
+        }
+        #banner .arrow div{
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            width: 30px;
+            height: 40px;
+            margin-top: -20px;
+            background-color: rgba(0,0,0,0.3);
+            line-height: 40px;
+            text-align: center;
+            color: rgba(255,255,255,.6);
+            cursor: pointer;
+        }
+        #banner .arrow div.left{
+            left: 0;
+        }
+        #banner .arrow div.right{
+            right: 0;
+        }
+        #banner .arrow div:hover{
+            background-color: rgba(0,0,0,.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="banner">
+        <!--图片区域-->
+        <div class="img">
+            <ul>
+                <li class="active"><img src="img/1.webp"></li>
+                <li><img src="img/2.webp"></li>
+                <li><img src="img/3.webp"></li>
+                <li><img src="img/4.webp"></li>
+                <li><img src="img/5.jpg"></li>
+                <li><img src="img/6.webp"></li>
+            </ul>
+        </div>
+
+        <!--按钮区域-->
+        <div class="tab">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <!--左右箭头区域-->
+        <div class="arrow">
+            <div class="left">
+                &lt;
+            </div>
+            <div class="right">
+                &gt;
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        (function(){
+            var oBanner = document.getElementById("banner")
+                ,aImgLi = document.querySelectorAll("#banner .img ul li")
+                ,aTabLi = document.querySelectorAll("#banner .tab ul li")
+                ,aArrow = document.querySelectorAll("#banner .arrow div")
+                ,len = aImgLi.length
+                ,index = 0
+                ,timer = null
+            ;
+
+            //变化函数
+            function change(){
+                aTabLi.forEach(function(ele,i){
+                    var op = i===index?"add":"remove";
+                    ele.classList[op]("active");
+                    aImgLi[i].classList[op]("active");
+                    /*if ( i === index ){
+                        ele.classList.add("active");
+                        aImgLi[i].classList.add("active");
+                    } else{
+                        ele.classList.remove("active");
+                        aImgLi[i].classList.remove("active");
+                    }*/
+                });
+            }
+
+            //给tab加点击事件
+            aTabLi.forEach(function(ele,i){
+                ele.onclick = function(){
+                    index = i;
+                    change();
+                };
+            });
+
+            //左右按钮的事件
+            aArrow.forEach(function(ele,i){
+                ele.onclick = function(){
+                    if ( i ){
+                        index ++;
+                        if(index>=len)index = 0;
+                    } else{
+                        index --;
+                        if(index<0)index=len-1;
+                    }
+
+                    change();
+                };
+            });
+
+            //定时器
+            function auto(){
+                timer = setInterval(function(){
+                    index ++;
+                    if(index>=len)index = 0;
+                    change();
+                },2000);
+            }
+            auto();
+
+            //清除定时器
+            oBanner.onmouseenter = function(){
+                clearTimeout(timer);
+            };
+            //启动定时器
+            oBanner.onmouseleave = auto;
+
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

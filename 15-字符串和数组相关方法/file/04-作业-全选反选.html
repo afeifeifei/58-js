@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body {
+            font-family: "Microsoft YaHei", serif;
+        }
+
+        body,
+        dl,
+        dd,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+        }
+
+        ol,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            border: none;
+        }
+
+        #wrap {
+            width: 300px;
+            padding-top: 20px;
+            margin: 50px auto;
+            border: 1px solid #bbb;
+            border-radius: 15px;
+            user-select: none;
+        }
+
+        #wrap ul.list li {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            font-size: 14px;
+            background: url("https://afeifeifei.github.io/class-demo/js-demo/2-07-07/img/ckbg1.jpg") no-repeat 20px center;
+            text-indent: 70px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        #wrap ul.list li.click {
+            background-image: url("https://afeifeifei.github.io/class-demo/js-demo/2-07-07/img/ckbg2.jpg");
+            text-indent: 50px;
+        }
+
+        #wrap .btn {
+            overflow: hidden;
+            width: 100%;
+            height: 50px;
+        }
+
+        #wrap .btn p {
+            float: left;
+            line-height: 50px;
+            margin-left: 50px;
+            background: url("https://afeifeifei.github.io/class-demo/js-demo/2-07-07/img/ckbg1.jpg") no-repeat 0 center;
+            text-indent: 23px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        #wrap .btn p.click {
+            background-image: url("https://afeifeifei.github.io/class-demo/js-demo/2-07-07/img/ckbg2.jpg");
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <ul class="list">
+            <li class="">朱雀</li>
+            <li class="">心艾</li>
+            <li class="">发发</li>
+            <li class="">七七</li>
+            <li class="">岚岚</li>
+            <li class="">艾米</li>
+            <li class="">丫丫</li>
+            <li class="">风屿</li>
+        </ul>
+        <div class="btn">
+            <p class="all">全选</p>
+            <p class="fan" style="background-image: none">反选</p>
+        </div>
+    </div>
+
+    <script>
+        
+        (function(){
+
+            var colorArr = ["#222","#555","#888","#bbb"];
+            var aLi = document.querySelectorAll("#wrap .list li");
+            var oAll = document.querySelector("#wrap .btn .all");
+            var oFan = document.querySelector("#wrap .btn .fan");
+            var len = aLi.length;
+
+            //颜色 点击事件
+            (function(){
+                for(var i=0;i<len;i++){
+                    aLi[i].style.backgroundColor = colorArr[i%colorArr.length];
+                    aLi[i].onclick = function(){
+                        this.classList.toggle("click");
+
+                        for(var i=0;i<len;i++){
+                            if(!aLi[i].classList.contains("click")){
+                                oAll.classList.remove("click");
+                                return;
+                            }
+                        }
+
+                        oAll.classList.add("click");
+                    }
+                }
+            })();
+
+            //全选按钮自身的点击
+            oAll.onclick = function(){
+                this.classList.toggle("click");
+                // if(this.classList.contains("click")){
+                //     for(var i=0;i<len;i++){
+                //         aLi[i].classList.add("click");
+                //     }
+                // }else{
+                //     for(var i=0;i<len;i++){
+                //         aLi[i].classList.remove("click");
+                //     }
+                // }
+                
+                var op = this.classList.contains("click")?"add":"remove"
+                for(var i=0;i<len;i++){
+                    aLi[i].classList[op]("click");
+                }
+            };
+
+            //反选点击
+            oFan.onclick = function(){
+                var ifAllClick = true;
+                for(var i=0;i<len;i++){
+                    aLi[i].classList.toggle("click");
+                    if( !aLi[i].classList.contains("click") ){
+                        oAll.classList.remove("click");
+                        ifAllClick = false;
+                    }
+                }
+
+                ifAllClick && oAll.classList.add("click");
+            };
+
+
+        })();
+
+    </script>
+</body>
+
+</html>

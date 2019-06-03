@@ -1,0 +1,298 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body {
+            font-family: "Microsoft YaHei", serif;
+        }
+
+        body, dl, dd, p, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+
+        ol, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        img {
+            border: none;
+        }
+
+        #wrap {
+            width: 879px;
+            height: 550px;
+            margin: 50px auto 0;
+            padding: 40px;
+            border: 1px solid #bbb;
+            user-select: none;
+        }
+
+        #content {
+            overflow: hidden;
+            width: 100%;
+            height: 500px;
+        }
+
+        #content ul {
+            width: 900px;
+            height: 100%;
+        }
+
+        #content ul li {
+            position: relative;
+            float: left;
+            width: 210px;
+            height: 240px;
+            margin-right: 13px;
+            margin-bottom: 20px;
+        }
+
+        #content ul li img {
+            display: block;
+        }
+
+        #content ul li p {
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+        }
+
+        #content ul li span {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 50px;
+            background: url("https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/price.png");
+            font-size: 14px;
+            line-height: 50px;
+            font-style: italic;
+            color: #fff;
+        }
+
+        #btn {
+            margin-top: 20px;
+        }
+
+        #btn span {
+            display: inline-block;
+            height: 30px;
+            padding: 6px 20px;
+            line-height: 30px;
+            text-align: center;
+            font-size: 12px;
+            background-color: #f60;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="content">
+            <ul>
+                <!--<li>
+                    <img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img1.jpg" width="210" height="210" alt="">
+                    <p>深红色经典玫瑰</p>
+                    <span>￥<b>100</b></span>
+                </li>
+                <li>
+                    <img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img2.jpg" width="210" height="210" alt="">
+                    <p>甜美七分袖荷叶边条纹设</p>
+                    <span>￥<b>97</b></span>
+                </li>
+                <li>
+                    <img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img3.jpg" width="210" height="210" alt="">
+                    <p>甜美七分袖荷叶边条纹设</p>
+                    <span>￥<b>99.5</b></span>
+                </li>
+                <li>
+                    <img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img4.jpg" width="210" height="210" alt="">
+                    <p>甜美七分袖荷叶边条纹设</p>
+                    <span>￥<b>215</b></span>
+                </li>
+                <li>
+                    <img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img5.jpg" width="210" height="210" alt="">
+                    <p>经典红色我的最爱</p>
+                    <span>￥<b>130</b></span>
+                </li>
+                <li>
+                    <img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img6.jpg" width="210" height="210" alt="">
+                    <p>清淡优雅百年百合</p>
+                    <span>￥<b>300</b></span>
+                </li>
+                <li>
+                    <img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img7.jpg" width="210" height="210" alt="">
+                    <p>紫色冷艳系列</p>
+                    <span>￥<b>700</b></span>
+                </li>
+                <li>
+                    <img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img8.jpg" width="210" height="210" alt="">
+                    <p>粉色浪漫系列玫瑰</p>
+                    <span>￥<b>500</b></span>
+                </li>-->
+            </ul>
+        </div>
+
+        <div id="btn">
+            <span style="margin-left: 600px">随机排序</span>
+            <span>从低到高</span>
+            <span>从高到低</span>
+        </div>
+    </div>
+
+    <script>
+
+        /*(function(){
+           var aLi = document.querySelectorAll("#content ul li")
+               ,aImg = document.querySelectorAll("#content ul li img")
+               ,aP = document.querySelectorAll("#content ul li p")
+               ,aB = document.querySelectorAll("#content ul li b")
+           ;
+           var data = [];
+
+           /*aLi.Each(function(ele,i){
+               data.push({
+                   src : aImg[i].src
+                   ,text : aP[i].innerText
+                   ,price : aB[i].innerText-0
+               });
+           });
+
+           console.log(data);
+
+       })();*/
+
+        (function () {
+
+            //模拟数据，假设数据是后端给的
+            var data = [
+                {
+                    src: "https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img1.jpg",
+                    text: "深红色经典玫瑰",
+                    price: 100
+                }
+                , {
+                    src: "https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img2.jpg",
+                    text: "甜美七分袖荷叶边条纹设",
+                    price: 97
+                }
+                , {
+                    src: "https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img3.jpg",
+                    text: "甜美七分袖荷叶边条纹设",
+                    price: 99.5
+                }
+                , {
+                    src: "https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img4.jpg",
+                    text: "甜美七分袖荷叶边条纹设",
+                    price: 215
+                }
+                , {
+                    src: "https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img5.jpg",
+                    text: "经典红色我的最爱",
+                    price: 130
+                }
+                , {
+                    src: "https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img6.jpg",
+                    text: "清淡优雅百年百合",
+                    price: 300
+                }
+                , {
+                    src: "https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img7.jpg",
+                    text: "紫色冷艳系列",
+                    price: 700
+                }
+                , {
+                    src: "https://afeifeifei.github.io/class-demo/js-demo/2-08-05/images/xh_img8.jpg",
+                    text: "粉色浪漫系列玫瑰",
+                    price: 500
+                }
+            ];
+
+            //获取
+            var oUl = document.querySelector("#content ul");
+            var aBtn = document.querySelectorAll("#btn span");
+
+
+            function creatHTML() {
+                var html = "";
+                data.forEach(function (item) {
+                    html += "<li>" +
+                        "<img src=\""+item.src+"\" width=\"210\" height=\"210\" alt=\"\">" +
+                        "<p>"+item.text+"</p>" +
+                        "<span>￥<b>"+item.price+"</b></span>" +
+                        "</li>";
+                });
+                oUl.innerHTML = html;
+            }
+
+            //初始结构的生成
+            creatHTML();
+
+            //排序按钮的点击
+            
+            
+            var arrFn = [
+                function(a,b){return Math.random()-0.5;}
+                ,function(a,b){return a.price - b.price;}
+                ,function(a,b){return b.price - a.price;}
+            ];
+            aBtn.forEach(function(ele,i){
+                ele.onclick = function(){
+                    data.sort( arrFn[i] );
+                    creatHTML();
+                };
+            });
+            
+            /*
+            //随机排序
+            aBtn[0].onclick = function(){
+                data.sort(function(a,b){
+                    return Math.random()-0.5;
+                });
+                creatHTML();
+            };
+            //低到高
+            aBtn[1].onclick = function(){
+                data.sort(function(a,b){
+                    return a.price - b.price;
+                });
+                creatHTML();
+            };
+            //高到低
+            aBtn[2].onclick = function(){
+                data.sort(function(a,b){
+                    return b.price - a.price;
+                });
+                creatHTML();
+            };*/
+
+
+
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

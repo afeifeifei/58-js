@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 100px;
+            font-size: 12px;
+        }
+
+        #wrap .title{
+            width: 100%;
+            height: 35px;
+            background-color: pink;
+            line-height: 35px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #wrap ul{
+            overflow: hidden;
+            width: 100%;
+            transition: height .2s;
+        }
+
+        #wrap ul.show{
+            height: 90px;
+        }
+        #wrap ul.hide{
+            height: 0;
+        }
+
+        #wrap ul li{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #f60;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <p class="title" id="title">服装</p>
+        <ul id="list" class="hide goudan">
+            <li>衣服</li>
+            <li>裤子</li>
+            <li>鞋子</li>
+        </ul>
+    </div>
+
+    <script>
+
+        /*
+
+        ele.classList.contains( 类名 )
+            类名存在，返回 true，否则，返回false
+
+         */
+
+
+        var title = document.getElementById("title");
+        var list = document.getElementById("list");
+
+        title.onclick = function(){
+
+            if ( list.classList.contains("hide") ) {
+                list.classList.add("show");
+                list.classList.remove("hide");
+            }else{
+                list.classList.add("hide");
+                list.classList.remove("show");
+            }
+
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

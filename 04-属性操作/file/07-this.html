@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        阿飞
+    </div>
+
+    <script>
+
+        var oWrap = document.getElementById("wrap");
+
+        //事件函数的this指向 触发事件的那个节点对象
+        oWrap.onclick = function(){
+            this.innerHTML = "朝歌";
+        };
+
+
+        //自执行函数，this指向window
+        function fn(){
+            console.log(this);
+        }
+        fn();
+
+
+
+        var obj = {
+            name : "obj",
+            fn : function(){
+                console.log(this);
+            }
+        };
+        //.操作的时候，调用的是谁的函数，this指向那个对象
+        obj.fn()
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

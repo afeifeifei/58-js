@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        splice( a,b, [data],[data],[data],…… )
+            从第 a 位开始，删除 b 个，并且用 data 来填充
+            返回删除的数据（数组包裹起来）
+         */
+
+        var a = [10,20,30,50];
+
+        //删除 30
+        //a.splice(2,1);
+
+        //删除 30，并且用80来替代
+        //a.splice(2,1,80);
+
+        //删除 30,50，并且用80来替代
+        //a.splice(2,2,80);
+
+        //删除 30,50，并且用80,90来替代
+        //a.splice(2,2,80,90);
+
+        //不删除，在20 30之间添加 88
+        //var r = a.splice(2,0,88);
+
+        a.splice(-2,1); //倒着数数也行
+
+
+        console.log(a);
+
+        //console.log(r);
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

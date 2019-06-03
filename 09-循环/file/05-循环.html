@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        p{
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <p>阿飞</p>
+        <p>朝歌</p>
+        <p>心艾</p>
+        <p>言心</p>
+    </div>
+
+    <script>
+
+        var aP = document.querySelectorAll("#wrap p");
+
+
+        /*for (let i=0;i<aP.length;i++ ){
+            aP[i].onclick = function(){
+                alert( i );
+            };
+        }*/
+
+        //ES5最好的解决方案是使用闭包，没有讲到闭包，先使用其他方式
+        /*for ( var i=0;i<aP.length;i++ ){
+            (function(i){
+                aP[i].onclick = function(){
+                    alert( i );
+                };
+            })(i);
+        }*/
+
+        //不太推荐的方案
+        for ( var i=0;i<aP.length;i++ ) {
+            aP[i].goudan = i;
+            aP[i].onclick = function(){
+                alert( this.goudan );
+            };
+        }
+
+        /*
+        aP[0].goudan = 0;
+        aP[0].onclick = function(){
+            alert( this.goudan );
+        };
+
+        aP[1].goudan = 1;
+        aP[1].onclick = function(){
+            alert( this.goudan );
+        };
+
+        aP[2].goudan = 2;
+        aP[2].onclick = function(){
+            alert( this.goudan );
+        };
+
+        aP[3].goudan = 3;
+        aP[3].onclick = function(){
+            alert( this.goudan );
+        };
+        */
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        function B(){
+            this.x = 10;
+        }
+        B.prototype.y = 20;
+
+
+        var b = new B();
+
+        //实例使用的属性的时候，通过原型链去查找
+        console.log(b.x);
+        console.log(b.y);
+
+        //实例修改属性的时候，是和原型链没有关系的
+        b.y = 888;
+
+        console.log(b);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+        #banner{
+            overflow: hidden;
+            position: relative;
+            width: 820px;
+            height: 380px;
+            margin: 50px auto;
+        }
+        #banner .b-img{
+            width: 100%;
+            height: 340px;
+        }
+        #banner .b-img ul{
+            width: 1000%;
+            height: 100%;
+            margin-left: 0;
+            transition: margin-left .3s;
+        }
+        #banner .b-img ul li{
+            float: left;
+            width: 10%;
+            height: 100%;
+        }
+        #banner .b-img ul li img{
+            display: block;
+        }
+        #banner .b-tab{
+            width: 100%;
+            height: 40px;
+        }
+        #banner .b-tab ul{
+            width: 1000%;
+            height: 100%;
+        }
+        #banner .b-tab ul li{
+            float: left;
+            width: 2%;
+            height: 38px;
+            background-color: #e3e2e2;
+            border-bottom: 2px solid #e3e2e2;
+            text-align: center;
+            line-height: 38px;
+            font-size: 12px;
+            cursor: pointer;
+            /*2px #cea861 solid*/
+        }
+        #banner .b-tab ul li.active{
+            background-color: #f5f5f5;
+            color: #cea861;
+            border-bottom: 2px solid #cea861;
+        }
+        #banner .b-arrow div{
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 40px;
+            margin-top: -20px;
+            background-color: rgba(205,167,98,.5);
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bolder;
+            transition: .2s;
+            cursor: pointer;
+        }
+        #banner .b-arrow div:hover{
+            background-color: rgba(205,167,98,.9);
+        }
+        #banner .b-arrow div.left{
+            left: 0;
+        }
+        #banner .b-arrow div.right{
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="banner">
+        <!--图片-->
+        <div class="b-img">
+            <ul>
+                <li><img src="images/1.jpg"></li>
+                <li><img src="images/2.jpg"></li>
+                <li><img src="images/3.jpg"></li>
+                <li><img src="images/4.jpg"></li>
+                <li><img src="images/5.jpg"></li>
+            </ul>
+        </div>
+        <!--选项卡-->
+        <div class="b-tab">
+            <ul>
+                <li class="active">季中英雄之礼</li>
+                <li>我们的冠军皮肤</li>
+                <li>试炼2019门票</li>
+                <li>晚23点iG再战SKT</li>
+                <li>票选更新英雄</li>
+            </ul>
+        </div>
+        <!--左右按钮-->
+        <div class="b-arrow">
+            <div class="left">
+                <
+            </div>
+            <div class="right">
+                >
+            </div>
+        </div>
+    </div>
+    
+    <script>
+
+
+        (function(){
+            var aTabLi = document.querySelectorAll("#banner .b-tab li")
+                ,oImgUl = document.querySelector("#banner .b-img ul")
+                ,oLeft = document.querySelector("#banner .b-arrow .left")
+                ,oRight = document.querySelector("#banner .b-arrow .right")
+                ,len = aTabLi.length
+                ,current = 0 //用一个变量记录一下当前是第几张图片显示
+            ;
+
+            function change( x ){
+                aTabLi[current].classList.remove("active");
+
+                //current = this.index;
+                current = x;
+
+                aTabLi[current].classList.add("active");
+                oImgUl.style.marginLeft = -current*820 +'px';
+            }
+
+            for ( var i=0;i<len;i++){
+                aTabLi[i].index = i;
+                aTabLi[i].onmouseenter = function(){
+                    change(this.index);
+                };
+            }
+
+            oLeft.onclick = function(){
+                var x = current-1;
+                if(x<0)x=len-1;
+
+                change(x);
+                /*aTabLi[current].classList.remove("active");
+
+                current --;
+                if(current<0)current = len-1;
+
+                aTabLi[current].classList.add("active");
+                oImgUl.style.marginLeft = -current*820 +'px';*/
+            };
+
+            oRight.onclick = function(){
+                var x = current+1;
+                if(x>=len)x=0;
+                change(x);
+                /*aTabLi[current].classList.remove("active");
+
+                current ++;
+                if(current>=len)current = 0;
+
+                aTabLi[current].classList.add("active");
+                oImgUl.style.marginLeft = -current*820 +'px';*/
+            };
+
+        })();
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

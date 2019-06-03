@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        1.定义
+            function a(){…}
+        2.执行
+            a();  =======>    局部作用域
+                                1.定义
+                                    var x
+                                2.执行
+                                    alert(x); // undefined
+                                    x = 10;
+            alert(x); //报错
+         */
+        a();
+        function a(){
+            alert(x);
+            var x = 10;
+        }
+        alert(x);
+
+
+        /*function a(){
+            alert(1);
+        }
+        var a;
+        alert(a);*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+        alert(a);
+
+        var a = 10;
+
+        alert(a);
+
+        function a(){alert(20)}
+
+        alert(a);
+
+        var a = 30;
+
+        alert(a);
+
+        function a(){alert(40)}
+
+        alert(a);
+
+        /*
+        1.定义
+            //被覆盖  20: var a;
+            //被覆盖  24: function a(){alert(20)}
+            //被覆盖  28: var a;
+            32: function a(){alert(40)}
+
+        2.执行
+            18: alert(a) // 函数块（40）
+            20: a = 10;
+            22: alert(a) // 10
+            26: alert(a); // 10
+            28: a = 30;
+            30: alert(a); // 30
+            34: alert(a); // 30
+         */
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

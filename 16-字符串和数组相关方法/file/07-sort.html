@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*var arr = [12,42,10,80,99,60,60];
+
+        //arr.sort(); //从小到大排序，改变原数组
+
+        //arr.reverse(); //颠倒顺序，改变原数组
+
+        //console.log(arr);
+
+        //console.log(arr.sort().reverse());
+
+        arr.sort( function(a,b){
+            return a-b;
+        } );
+
+        console.log(arr);*/
+
+        var arr = [
+            {name:"阿飞",age:18}
+            ,{name:"朝歌",age:40}
+            ,{name:"银时",age:36}
+            ,{name:"言心",age:39}
+            ,{name:"万章",age:29}
+        ];
+
+        arr.sort(function(a,b){
+            //console.log(a);
+            //console.log(b);
+            return a.age-b.age;
+        });
+
+        console.log(arr);
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

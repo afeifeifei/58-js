@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap"></div>
+
+    <script>
+
+        //DOM 提供了一些操作页面的方式
+
+        //在js中要去操作标签，
+        //获取标签 => 添加内容
+        //document.getElementById("wrap")   .innerHTML   =   "<p>阿飞</p>";
+
+        /*
+        var oWrap = document.getElementById("wrap");
+        var txt = "<p>阿飞</p>";
+
+        oWrap.innerHTML = txt;
+        */
+
+        //事件
+        //点击事件  onclick
+
+        var oWrap = document.getElementById("wrap");
+
+        oWrap .onclick = function(){
+
+            console.log( "你特么点我干什么！！" );
+
+        };
+
+        // onmouseenter 移入          onmouseleave 移出
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

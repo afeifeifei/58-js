@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <div class="goudan">
+
+    </div>
+
+    <div id="wrap">
+        <p class="goudan">
+            <a href=""></a>
+            <a href=""></a>
+        </p>
+    </div>
+
+    <a href=""></a>
+
+
+    <script>
+
+        /*
+        通过ID获取
+            document.getElementById(  )
+        通过class获取（不支持IE8及以下）
+            .getElementsByClassName(  )
+        通过标签名获取
+            .getElementsByTagName(  )
+
+        通过name获取
+            .getElementsByName( )
+
+        通过选择器获取（不支持IE7及以下）
+            .querySelector()
+            .querySelectorAll()
+
+         */
+        /*
+        var aGou = document.getElementsByClassName("goudan");
+        //aGou.innerHTML = "加点内容。"; //不能直接对着数组操作
+        console.log(aGou);
+        aGou[0].innerHTML = "加点内容。";
+        */
+
+        //var aP = document.getElementsByTagName("p");
+
+        //console.log(aP);
+        //aP[1].innerHTML = "加点内容！！！";
+
+        /*var aA = document.querySelectorAll("#wrap .goudan a");
+        console.log(aA);
+        aA[1].innerHTML = "12456";*/
+        var aA = document.querySelector("#wrap .goudan a");
+        console.dir(aA);
+        aA.innerHTML = "12456";
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

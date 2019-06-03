@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            margin: 10px;
+            min-width: 720px;
+        }
+        #wrap span{
+            display: inline-block;
+            width: 65px;
+            height: 32px;
+            border: 1px solid blue;
+            line-height: 32px;
+            text-align: center;
+            font-size: 12px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="wrap">
+    </div>
+    
+    <script>
+
+        var oWrap = document.getElementById("wrap");
+
+
+        var html = "";
+
+        var i,j;
+
+        //第一轮循环
+        for ( i=1;i<=9;i++ ){
+            for ( j=1;j<=i;j++ ){
+                html += "<span>"+i+"*"+j+"="+i*j+"</span>";
+            }
+
+            html += "<br>";
+        }
+
+        html += "<hr><hr>";
+
+        //第二轮循环
+        for ( i=1;i<=9;i++ ){
+            for ( j=i;j<=9;j++ ){
+                html += "<span>"+i+"*"+j+"="+i*j+"</span>";
+            }
+            html += "<br>";
+        }
+
+        html += "<hr><hr>";
+        
+        //第三轮循环
+        for ( i=9;i>=1;i-- ){
+            for ( j=1;j<=i;j++ ) {
+                html += "<span>"+i+"*"+j+"="+i*j+"</span>";
+            }
+            html += "<br>";
+        } 
+
+        //console.log(html);
+        oWrap.innerHTML = html;
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

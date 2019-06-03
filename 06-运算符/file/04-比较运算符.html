@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+           <  <=    >   >=    ==  ===   !=   !==
+
+            == （基础数据类型时）只做值判断，不做数据类型判断
+            === （基础数据类型时）先做数据类型判断，再做值判断
+
+        */
+
+        /*var a = 10;
+        var b = 20;
+        console.log( a < b );*/
+
+        /*
+        var a = "10";
+        var b = 10;
+
+        console.log( a == b );  //true
+        console.log( a === b );  //false
+        */
+
+        /*
+        //复杂数据类型做比较，比较的是指针（内存地址）
+        var a = {x:10};
+        var b = {x:10};
+        console.log(a == b);   //false
+        console.log(a === b);  // fasle
+        */
+
+        /*var a = {x:10};
+        var b = a;
+        b.y = 20;
+
+        console.log(a == b);   //true
+        console.log(a === b);  //true*/
+
+        /*var a = 5;
+        var b = "5";
+        console.log( a !== b );*/
+
+
+        //var x = 8;
+        //console.log( 3 < x < 6 ); //js里面没有数学里面的连不等式，这样写，不代表范围的意思
+        // 3 < x   ===>  true
+        // true < 6   ===>   1 < 6   ===>   true
+
+
+        //在字符串比较大小的时候，比较对应位置字符的 Unicode 码
+        /*var a = "阿";
+        var b = "飞";
+        console.log( a < b );*/
+
+        var a = "30";
+        var b = "4";
+
+        console.log(a > b);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

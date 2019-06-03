@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+
+        console.log( "5" + 2 ); // "52"
+        console.log(  true + 1  ); // 2
+        console.log( true + "1" ); // "true1"
+
+        // + 号两边都有数据的时候，任意一遍是字符串，那么+号的意义为拼接
+
+        console.log( "1" + 2 + 3 + "4" ); //"1234"
+        //             "12" + 3 + "4"
+
+        console.log( +"12" ); // 12
+
+
+
+        //普通对象被转换成字符串的时候 "[object Object]"
+        console.log( {} + "1" );//"[object Object]1"
+
+
+        /*
+        //做一下了解
+        var obj1 = {name:"阿飞"};
+        var obj2 = {name:"言心"};
+
+        var f = {};
+        f[ obj1 ] = "123"; // f[ "[object Object]" ] = "123"
+        console.log(   f[obj2]  ); // f[ "[object Object]" ]
+        */
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

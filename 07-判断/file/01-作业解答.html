@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select: none}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #goods{
+            width: 600px;
+            margin: 100px auto;
+            border-collapse: collapse;
+        }
+        #goods th{
+            height: 30px;
+        }
+        #goods td{
+            text-align: center;
+            height: 100px;
+        }
+        #goods td span#sub,#goods td span#add{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #666;
+            color: #fff;
+            cursor: pointer;
+        }
+        #goods td span#number{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        #goods .img{
+            background: url("https://afeifeifei.github.io/class-demo/js-demo/2-03-03/timg.jpg") no-repeat center center/contain;
+        }
+    </style>
+</head>
+<body>
+
+    <table id="goods" border="1">
+        <tr>
+            <th>图片</th>
+            <th>单价</th>
+            <th>数量</th>
+            <th>价格</th>
+        </tr>
+        <tr>
+            <td class="img"></td>
+            <td class="danjia">20</td>
+            <td class="num">
+                <span id="sub">-</span><span id="number">0</span><span id="add">+</span></td>
+            <td class="price" id="price">0</td>
+        </tr>
+    </table>
+
+    <script>
+
+        /*
+        在做价格计算的时候，或者相似的场景的时候，不能直接从页面中拿取HTML字符来进行运算
+        因为HTML内容可以被任意的修改
+         */
+
+        var oSub = document.getElementById("sub")
+            ,oAdd = document.getElementById("add")
+            ,oNum = document.getElementById("number")
+            ,oPrice = document.getElementById("price");
+
+        //商品相关的数据，后端肯定会给你。我们此时在做案例的时候，简单的  模拟  一下
+        var dj = 20; //单价
+        var number = 0; //数量
+
+
+        //var oDj = document.querySelector(".danjia");
+        //oDj.innerHTML * 2
+
+        //点击 + 号按钮产生的事件
+        oAdd.onclick = function(){
+            oNum.innerText = ++number; //数量的变化
+            oPrice.innerText = number*dj; //总价的变化
+        };
+
+        //点击 - 号按钮产生的事件
+        oSub.onclick = function () {
+            number --;
+            (number<0) && (number = 0);
+            oNum.innerText = number; //数量的变化
+            oPrice.innerText = number*dj; //总价的变化
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

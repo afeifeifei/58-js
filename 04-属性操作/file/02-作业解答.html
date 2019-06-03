@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #box1,#box2{
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            background-color: #999;
+            color: #fff;
+            font-size: 12px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box1">
+
+    </div>
+    <div id="box2">
+
+    </div>
+
+    <script>
+
+        var oBox1 = document.getElementById("box1"),
+            oBox2 = document.getElementById("box2");
+
+        //给第一个盒子加事件
+        oBox1.onmouseenter = function(){
+            //alert( 1 );
+            //改变oBox2的内容
+            oBox2.innerHTML = "box1被移入了！";
+        };
+
+        //给第一个盒子添加离开事件
+        oBox1.onmouseleave = function(){
+            oBox2.innerHTML = "";
+        };
+
+
+        oBox2.onmouseenter = function(){
+            oBox1.innerHTML = "box2被移入了！";
+        };
+
+        oBox2.onmouseleave = function(){
+            oBox1.innerHTML = "";
+        };
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

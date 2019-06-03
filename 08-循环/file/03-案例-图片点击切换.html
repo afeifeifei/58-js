@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+        #wrap{
+            position: relative;
+            width: 658px;
+            height: 411px;
+            margin: 50px auto;
+        }
+        #wrap .img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #wrap .img ul{
+            width: 100%;
+            height: 100%;
+        }
+        #wrap .img ul li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity .5s;
+        }
+
+        #wrap .img ul li.show{
+            opacity: 1;
+        }
+
+        #wrap .img ul li img{
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        #wrap .arrow div{
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 40px;
+            margin-top: -20px;
+            background-color: rgba(0,0,0,.3);
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            transition: .2s;
+            cursor: pointer;
+        }
+        #wrap .arrow div:hover{
+            background-color: rgba(0,0,0,.8);
+        }
+        #wrap .arrow div.left{
+            left: 0;
+        }
+        #wrap .arrow div.right{
+            right: 0;
+        }
+        #wrap .tip{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            font-size: 12px;
+            background-color: rgba(0,0,0,.7);
+            color: #fff;
+            line-height: 30px;
+            text-align: center;
+        }
+        #wrap .tab{
+            position: absolute;
+            bottom: -40px;
+            width: 100%;
+            height: 30px;
+            text-align: center;
+        }
+        #wrap .tab p{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #333333;
+            color: #fff;
+            font-size: 12px;
+            cursor: pointer;
+            transition: .2s;
+        }
+        #wrap .tab p.active{
+            background-color: #f60;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="wrap">
+        <!--图片区域-->
+        <div class="img">
+            <ul>
+                <li class="show"><img src="img/1.jpg"></li>
+                <li><img src="img/2.jpg"></li>
+                <li><img src="img/3.jpg"></li>
+                <li><img src="img/4.jpg"></li>
+                <li><img src="img/5.jpg"></li>
+            </ul>
+        </div>
+        <!--按钮区域-->
+        <div class="arrow">
+            <div class="left">
+                <
+            </div>
+            <div class="right">
+                >
+            </div>
+        </div>
+        <!--提示-->
+        <p class="tip">第<span>1</span>/5张</p>
+        <!--切换选项-->
+        <div class="tab">
+            <p class="active">单边切换</p>
+            <p>循环切换</p>
+        </div>
+    </div>
+    
+    <script>
+
+        //获取元素
+        var aImgLi = document.querySelectorAll("#wrap .img ul li")
+            ,aArrow = document.querySelectorAll("#wrap .arrow div")
+            ,oSpan = document.querySelector("#wrap .tip span")
+            ,aTabP = document.querySelectorAll("#wrap .tab p")
+            ,len = aImgLi.length
+        ;
+
+        //定义辅助变量
+        var index = 0 //用来表示当前显示的是哪一张图片
+            ,tabStyle = true //用来表示当前的切换模式
+        ;
+
+        //右按钮的点击
+        aArrow[1].onclick = function(){
+            aImgLi[index].classList.remove("show"); //先让当前显示的li隐藏
+
+            index ++; //然后将辅助的index+1，以便于后续的显示操作
+
+            //超过限制的判断
+            if( index > len-1 ){
+                if ( tabStyle ){
+                    //单边切换模式
+                    index = len-1;  //如果大于len，回退一步
+                } else{
+                    //循环切换模式
+                    index = 0;
+                }
+            }
+
+            aImgLi[index].classList.add("show"); //让下一张显示
+
+            oSpan.innerText = index+1; //让提示文字改变
+        };
+
+        //左按钮的点击
+        aArrow[0].onclick = function(){
+            aImgLi[index].classList.remove("show");
+
+            index --;
+
+            //超限判断
+            if( index < 0 ){
+                if ( tabStyle ){
+                    //单边切换
+                    index = 0;
+                } else{
+                    //循环切换
+                    index = len-1;
+                }
+            }
+
+            aImgLi[index].classList.add("show");
+
+            oSpan.innerText = index+1;
+        };
+
+        //切换风格按钮的点击
+        //单边切换
+        aTabP[0].onclick = function(){
+            this.classList.add("active");
+            aTabP[1].classList.remove("active");
+
+            tabStyle = true; //改变辅助变量，以便于别处的代码使用
+        };
+        //循环切换
+        aTabP[1].onclick = function(){
+            this.classList.add("active");
+            aTabP[0].classList.remove("active");
+
+            tabStyle = false; //改变辅助变量，以便于别处的代码使用
+        };
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*//全局变量 GO
+        var a = 10;
+
+        function fn(){
+            var b = 20; // AO.b = 20
+
+            console.log(b); // AO.b
+        }
+
+        fn();*/
+
+
+        //全局var function关键词定义的变量，相当于给 window 对象添加了属性
+        //console.log(window.fn);
+
+
+        var b = 10;
+
+        function w(){
+            function x(){
+                function y(){
+                    console.log(b);
+                }
+                y();
+            }
+            x();
+        }
+
+        function fn(){}
+
+        w();
+        w();
+        fn();
+
+        /*function x(name){
+            console.log(name);
+        }
+
+        x("阿飞");
+        x("朝歌");*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

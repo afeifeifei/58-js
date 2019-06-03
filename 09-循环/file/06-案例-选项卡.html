@@ -1,0 +1,89 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>选项卡特效</title>
+    <meta name="Keywords" content="关键词,关键词">
+    <meta name="description" content="">
+    <!--css/js-->
+    <style type="text/css">
+        *{margin:0px; padding:0px;font-family:"微软雅黑";}
+        #News{width:300px;height:240px; margin:100px auto; border:1px solid #E0E0E0;}
+        #News p{height:31px;background:url("https://afeifeifei.github.io/class-demo/js-demo/2-07-05/images/bg1.gif");}
+        #News p span{width:94px;height:31px; display:block; float:left; background:url("https://afeifeifei.github.io/class-demo/js-demo/2-07-05/images/bg1.gif");
+            font-size:14px; line-height:31px; text-align:center; cursor: pointer}
+        #News p span.active{background:url("https://afeifeifei.github.io/class-demo/js-demo/2-07-05/images/bg2.gif"); color:#fff;}
+        #News .con{width:270px; margin:10px auto 0px; height:209px; overflow:hidden;}
+        #News .con ul{display: none;}
+        #News .con ul.show{display: block;}
+        #News .con ul li{line-height:39px;font-size:12px; border-bottom:1px dotted #ddd; list-style-type:none;position:relative; text-indent:50px;}
+        #News .con ul li a{color:#000;text-decoration:none;}
+        #News .con ul li a:hover{color:red;}
+        #News .con ul li span{width:21px;height:15px; background:url("https://afeifeifei.github.io/class-demo/js-demo/2-07-05/images/but.gif");  color:#fff;
+            font-size:12px; display:block; line-height:15px; text-align:center;
+            position:absolute; left:10px; top:12px; text-indent:0px;}
+    </style>
+</head>
+
+<body>
+
+    <div id="News">
+        <p class="btn"><span class="active">热门排行</span><span>美图速递</span><span>社区Top</span></p>
+        <div class="con">
+            <ul class="show">
+                <li><span>1</span><a href="">产后妈妈分享：成功祛除妊娠纹经历</a></li>
+                <li><span>2</span><a href="">营养不足 你初老了吗</a></li>
+                <li><span>3</span><a href="">儿童淘气不要急 父母巧应对</a></li>
+                <li><span>4</span><a href="">孕妇产力不足 临产小诀窍</a></li>
+                <li><span>5</span><a href="">新生儿脸色发黄 注意补充营养</a></li>
+            </ul>
+
+            <ul>
+                <li><span>1</span><a href="">[重磅推荐]大量涉黄场所被清剿</a></li>
+                <li><span>2</span><a href=""> [高清大图]胡兵复古大片激情四射</a></li>
+                <li><span>3</span><a href="">[活色生香]贝嫂内衣写真玉体横陈 </a></li>
+                <li><span>4</span><a href="">[高清大图]倪妮表情鬼马俏皮可爱 </a></li>
+                <li><span>5</span><a href="">[重磅推荐]选美文化 在繁华中落寞</a></li>
+            </ul>
+
+
+            <ul>
+                <li><span>1</span><a href="">能遇见你就是我最大的幸福 愿得一</a></li>
+                <li><span>2</span><a href="">最伤身体的10个生活习惯，一定要避</a></li>
+                <li><span>3</span><a href="">儿童淘气不要急 父母巧应对</a></li>
+                <li><span>4</span><a href="">孕妇产力不足 临产小诀窍</a></li>
+                <li><span>5</span><a href="">新生儿脸色发黄 注意补充营养</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+
+        var aSpan = document.querySelectorAll("#News p.btn span")
+            ,aUl = document.querySelectorAll("#News .con ul")
+        ;
+
+        for ( var i=0;i<aSpan.length;i++ ){
+            aSpan[i].index = i;
+            aSpan[i].onmouseenter = function(){
+
+                //先把所有的名字全给去掉了。
+                for ( var j=0;j<aSpan.length;j++ ){
+                    aUl[j].classList.remove("show");
+                    aSpan[j].classList.remove("active");
+                }
+
+                //然后再给当前的这个加对应的显示名字
+                aUl[ this.index ].classList.add("show");
+                this.classList.add("active");
+            };
+        }
+
+
+    </script>
+
+
+
+</body>
+</html>

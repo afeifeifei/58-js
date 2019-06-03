@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        //函数定义  允许在前面调用，因为浏览器会先解析定义函数的代码
+        /*a();
+        function a(){
+            alert( 123 );
+        }*/
+
+        //函数表达式   不允许在前面调用
+        /*a(); //报错
+        var a = function(){
+            alert( 456 );
+        };*/
+
+
+
+        //报错   函数定义不可以直接定义后面加括号自执行
+        /*function f () {
+            console.log(1);
+        }()*/
+
+        //函数表达式，可以直接在后面加括号执行
+        /*var a = function(){
+            console.log(1);
+        }();*/
+
+
+        /*var a = function(){
+            var x = "阿飞";
+            console.log(x)
+        };
+        a();
+
+        var b = function() {
+            var x = "朝歌";
+            console.log(x)
+        };
+        b();*/
+
+        /*
+        避免污染全局变量
+        让每个模块独立开来
+         */
+
+        //函数表达式自执行
+        //轮播图
+        ;(function(){
+            var x = "阿飞";
+            console.log(x)
+        })();
+
+        //选项卡
+        ;(function() {
+            var x = "朝歌";
+            console.log(x)
+        })();
+
+        ;(function(){
+            var x = "狗蛋";
+            console.log(x)
+        }());
+
+        ;+function(){
+            var x = "言心";
+            console.log(x);
+        }();
+
+        ;-function(){
+            var x = "心艾";
+            console.log(x);
+        }();
+
+        ;!function(){
+            var x = "银时";
+            console.log(x);
+        }();
+
+        ;~function(){
+            var x = "天天";
+            console.log(x);
+        }();
+
+
+
+
+        /*var a = 1 ;
+
+        ;+function(){
+            var x = "言心";
+            console.log(x);
+        }();*/
+
+
+        var a = function(){}
+
+
+
+
+        ;(function(){})();
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <p>000</p>
+    <p>111</p>
+    <p>222</p>
+    <p>333</p>
+
+    <script>
+
+        /*var obj = {
+            fn : function(){
+                console.log(this);
+            }
+        };
+
+        obj.fn.call({name:"阿飞"});*/
+
+        var aP = document.querySelectorAll("p");
+
+        for ( var i=0;i<aP.length;i++ ){
+            aP[i].onclick = function(){
+                //console.log(this);
+                //fn(this);
+
+                //var obj = this;
+                //fn.call(obj);
+                //fn.call(this);
+
+                //console.log(this);
+
+                //fn.call({name:"阿飞"});
+
+                var x = 10;
+                fn.call( this );
+
+            };
+        }
+
+        function fn(){
+            console.log(this);
+            console.log(x);
+        }
+
+        /*function fn( This ){
+            console.log(This);
+            //console.log(this);
+        }*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

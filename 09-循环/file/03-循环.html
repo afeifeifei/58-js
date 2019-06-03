@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <p>阿飞</p>
+        <p>朝歌</p>
+        <p>心艾</p>
+        <p>言心</p>
+    </div>
+
+    <script>
+
+        var aP = document.querySelectorAll("#wrap p");
+
+
+        /*for ( var i=0;i<aP.length;i++ ){
+            aP[i].onclick = function(){
+                alert( this.innerText );
+            };
+        }*/
+
+        function clickFn(){
+            alert( this.innerText );
+        }
+
+        //clickFn();
+
+        for ( var i=0;i<aP.length;i++ ){
+            aP[i].onclick = clickFn;
+        }
+
+        //console.log(i);
+
+        /*
+        aP[0].onclick = function(){
+            alert( this.innerText );
+        };
+        aP[1].onclick = function(){
+            alert( this.innerText );
+        };
+        aP[2].onclick = function(){
+            alert( this.innerText );
+        };
+        aP[3].onclick = function(){
+            alert( this.innerText );
+        };
+        */
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

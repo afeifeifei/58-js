@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+        //父类
+        function Person(n,a,s){
+            this.name = n;
+            this.age = a;
+            this.sex = s;
+            //一千条
+        }
+        Person.prototype.sayName = function(){
+            console.log(this.name);
+        };
+        Person.prototype.sayAge = function(){
+            console.log(this.age);
+        };
+
+
+        //从父类的基础上，继承出子类 Teacher
+        function Teacher(n,a,s,id){
+            //构造函数私有属性的继承
+            Person.call(this,n,a,s);
+            //新增的私有属性
+            this.id = id;
+        }
+        //原型的继承
+
+        Teacher.prototype = new Person();
+        Teacher.prototype.sayID = function(){
+            console.log(this.id);
+        };
+        Teacher.prototype.constructor = Teacher;
+
+        console.log(Person.prototype);
+        console.log(Teacher.prototype);
+
+
+        //Teacher实例化
+        var af = new Teacher("阿飞",18,"男","00160");
+        console.log(af);
+        /*af.sayAge();
+        af.sayName();
+        af.sayID();*/
+
+        var yx = new Teacher("言心",30,"女","00456");
+        console.log(yx);
+
+        /*Teacher.prototype.constructor = Teacher;
+
+        //新增原型属性
+        Teacher.prototype.sayID = function(){
+            console.log(this.id);
+        };
+
+
+        //Person实例化
+        var p = new Person("张三",20,"男");
+        console.log(p);
+
+        //Teacher实例化
+        var af = new Teacher("阿飞",18,"男","00160");
+        console.log(af);
+        af.sayAge();
+        af.sayName();
+        af.sayID();*/
+    </script>
+</body>
+</html>
+
+
+
+
+
+

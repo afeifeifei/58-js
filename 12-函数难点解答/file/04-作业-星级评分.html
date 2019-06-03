@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Fly">
+    <title>Title</title>
+    <style>
+        *{ margin: 0; padding: 0; font-family:Microsoft yahei,serif;}
+        li{ list-style:none;}
+        #box{
+            width: 310px;
+            height: 75px;
+            margin: 30px auto;
+            font-size: 12px;
+            line-height: 75px;
+        }
+        #box span{
+            float: left;
+            color: red;
+        }
+        #box ul{
+            float: left;
+            width: 100px;
+            height: 20px;
+            margin-top: 27px;
+        }
+        #box ul li{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: url("https://afeifeifei.github.io/class-demo/js-demo/2-08-02/img/star.png");
+            cursor: pointer;
+        }
+        #box ul li.on{
+            background-position: 0 -27px;
+        }
+        #box p{
+            float: right;
+            width: 120px;
+            height: 70px;
+            line-height: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <span>星级评分：</span>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <p>提示：请认真给当前文章打分</p>
+    </div>
+    <script>
+
+        (function(){
+
+            var oUl = document.querySelector("#box ul")
+                ,aLi = document.querySelectorAll("#box ul li")
+                ,oP = document.querySelector("#box p")
+                ,len = aLi.length
+                ,pTxt = ["提示：请认真给当前文章打分","很差","较差","一般","较好","很好"]
+                ,clickIndex = -1;
+            ;
+
+            for ( var i=0;i<len;i++ ){
+                aLi[i].index = i;
+                aLi[i].onmouseenter = function(){
+                    var index = this.index;
+                    //改变名字
+                    for ( var i=0;i<len;i++ ){
+                        var op = i<=index?"add":"remove";
+                        aLi[i].classList[ op ]("on");
+                    }
+                    //改变oP的内容
+                    oP.innerText = pTxt[index+1];
+                };
+                aLi[i].onclick = function(){
+                    clickIndex = this.index;
+                };
+            }
+
+            oUl.onmouseleave = function(){
+                for ( var i=0;i<len;i++ ){
+                    var op = i<=clickIndex?"add":"remove";
+                    aLi[i].classList[ op ]("on");
+                    oP.innerText = pTxt[clickIndex+1];
+                }
+            };
+
+        })();
+
+
+        /* if ( i<=index ){
+                            aLi[i].classList.add("on");
+                        } else{
+                            aLi[i].classList.remove("on");
+                        }*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

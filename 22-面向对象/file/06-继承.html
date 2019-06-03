@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+    </style>
+</head>
+<body>
+
+    <script>
+
+        function extend(CLASS){
+            function F(){}
+            F.prototype = CLASS.prototype;
+            return new F();
+        }
+
+
+        //父类 Person
+        function Person(n,a){
+            this.name = n;
+            this.age = a;
+        }
+        Person.prototype.sayName = function(){
+            console.log(this.name);
+        };
+        Person.prototype.sayAge = function(){
+            console.log(this.age);
+        };
+
+
+
+        //子类 Teacher
+        function Teacher(n,a,i){
+            Person.call(this,n,a);//私有属性继承
+
+            this.id = i;//私有属性新增
+        }
+        //原型继承
+        Teacher.prototype = extend(Person);
+
+        //原型修改与新增
+        Teacher.prototype.constructor = Teacher;
+        Teacher.prototype.sayID = function(){
+            console.log(this.id);
+        };
+
+
+
+        //子类 Student
+        function Student(n,a,t){
+            Person.call(this,n,a);
+            this.time = t;
+        }
+        Student.prototype = extend(Person);
+        Student.prototype.constructor = Student;
+        Student.prototype.sayTime = function(){
+            console.log(this.time);
+        };
+
+
+        var p = new Person("张三",40);
+        console.log(p);
+
+        var a = new Teacher("阿飞",18,160);
+        console.log(a);
+
+        var k = new Student("科技",26,new Date(2019,3));
+        console.log(k);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

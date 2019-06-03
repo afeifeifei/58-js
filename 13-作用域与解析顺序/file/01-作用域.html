@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+        //全局作用域
+        /*//var a = 10;
+
+        function fn(){
+            //var a = 30;
+            var b = 20;
+            console.log(a);
+            console.log(b);
+        }
+
+        fn();*/
+
+
+        //var a = 10;
+
+        function fn(){
+            var b = 20;
+
+            function x(){
+                //console.log(a);
+
+                a = 30;
+            }
+
+            x();
+        }
+
+        fn();
+
+        console.log(a);
+    </script>
+</body>
+</html>
+
+
+
+
+
+

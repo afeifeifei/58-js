@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <p>111</p>
+    <p>111</p>
+    <p>111</p>
+
+    <script>
+
+        /*var aP = document.getElementsByTagName("p");
+
+        console.log(aP);
+
+        console.log( aP.forEach );*/
+
+        var aP = document.querySelectorAll("p");
+
+        console.log( aP.forEach );
+
+        //这个类数组比较特殊，可以使用forEach
+        aP.forEach( function(ele,index){
+            ele.onclick = function(){
+                alert( index );
+            };
+        } );
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

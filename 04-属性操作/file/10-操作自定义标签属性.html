@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <a href="https://www.baidu.com" id="wrap" afei="阿飞" class="afei">a标签</a>
+
+    <script>
+
+        var oWrap = document.getElementById("wrap");
+
+        console.dir(oWrap);
+
+        //oWrap.afei = "朝歌";
+
+        //oWrap.attributes[1].nodeValue = "朝歌";
+
+        /*
+        三个方法操作标签属性
+        .getAttribute()
+        .setAttribute()
+        .removeAttribute()
+         */
+
+        console.log(  oWrap.getAttribute("afei")  );
+        oWrap.setAttribute("afei" , "言心");
+        oWrap.removeAttribute( "class" );
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        函数在 定义/声明 的时候是不知道this指向的
+
+        只有在执行的时候才有this这个概念
+         */
+
+        function fn(){
+            console.log(this);
+        }
+
+        //fn();
+
+        document.onclick = fn;
+
+
+        var obj = {
+            fn : function(){
+                console.log(this);
+            }
+        };
+
+        obj.fn();
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

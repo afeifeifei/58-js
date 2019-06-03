@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content=" ">
+    <title>自定义复选框</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0; user-select: none}
+        a{text-decoration: none;}
+        ul,li{list-style: none;}
+        body{font-size: 14px;font-family: "微软雅黑";}
+        #check{width:600px;margin:50px auto 0px ;}
+        #check h3{line-height:35px; font-size:14px; border-bottom:1px dashed #666; margin-bottom:10px;}
+        #check ul li{
+            float:left;text-indent:30px;
+            line-height:35px;
+            font-size:12px;
+            margin:0px 10px;
+            background:url("img/ckbg1.jpg") no-repeat 0px 6px;
+            cursor:pointer;
+        }
+        #check ul li.ck{
+            background:url("img/ckbg2.jpg") no-repeat 0px 6px;
+        }
+    </style>
+</head>
+<body>
+    <div id="check">
+        <h3>你最喜欢的水果</h3>
+        <ul>
+            <li>苹果</li>
+            <li>梨子</li>
+            <li>香蕉</li>
+            <li>葡萄</li>
+            <li>西瓜</li>
+            <li>芒果</li>
+        </ul>
+    </div>
+    <script>
+
+        var aLi = document.querySelectorAll("#check li");
+
+        for ( var i=0;i<aLi.length;i++ ) {
+            aLi[i].onclick = function(){
+                //alert(1);
+                //this.classList.add("ck");
+                /*if ( this.classList.contains("ck") ){
+                    this.classList.remove("ck");
+                } else{
+                    this.classList.add("ck");
+                }*/
+                this.classList.toggle("ck");
+            };
+        }
+        /*
+        .toggle( 类名 )
+            元素有指定的类名，就去掉该类名；元素没有指定的类名，就添加类名。
+
+         */
+
+    </script>
+</body>
+</html>

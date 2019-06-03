@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <p id="wrap">
+        <a href="">Hello！</a>
+    </p>
+
+    <script>
+
+        var oP = document.getElementById("wrap");
+
+
+        //赋值时候的区别
+        //oP.innerHTML = "<a href=\"http://www.baidu.com\">a标签</a>"
+        //oP.innerText = "<a href=\"http://www.baidu.com\">a标签</a>"
+
+        //获取的区别
+        console.log( oP.innerHTML );
+        console.log(oP.innerText);
+
+
+        /*var obj = {
+            x : 10
+        };
+
+        console.log(obj.x);
+        obj.x = 20;*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <a href="https://www.baidu.com" style="" id="wrap" class="afei">a标签</a>
+    <img src="1.jpg" id="goudan">
+
+    <script>
+
+        //操作元素的标签属性
+        //合法标签属性，直接 . 操作
+            //class利用  className代替操作
+            //style是一个样式的集合对象，直接赋予它字符串值，不太合适，有更好的操作
+
+        var oWrap = document.getElementById("wrap");
+
+        oWrap.className = "y789";
+
+        console.dir(oWrap);
+
+
+        //获取
+        //console.log(oWrap.href);
+
+        //修改
+        //oWrap.href = "http://www.afei.fun";
+
+        /*var oGou = document.getElementById("goudan");
+
+        oGou.onclick = function(){
+            this.src = "2.gif";
+            this.title = "已经被点击过啦！";
+        };*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

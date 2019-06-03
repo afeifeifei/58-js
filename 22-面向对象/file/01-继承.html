@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        function Person(n,a){
+            this.name = n;
+            this.age = a;
+            //一千条
+        }
+        Person.prototype.sayName = function(){
+            console.log(this.name);
+        };
+        Person.prototype.sayAge = function(){
+            console.log(this.age);
+        };
+        //很多原型方法
+
+
+        var zs = new Person("张三",20);
+        console.log(zs);
+
+
+        /*
+        继承，
+            在父类的基础上继承出子类，子类拥有父类的一切，
+            并且子类可以扩展新的属性，扩展的新属性是不影响父类的
+         */
+
+        /*function Teacher(n,a,id){
+            this.name = n;
+            this.age = a;
+            this.id= id;
+        }
+        Teacher.prototype.sayName = function(){
+            console.log(this.name);
+        };
+        Teacher.prototype.sayAge = function(){
+            console.log(this.age);
+        };
+        Teacher.prototype.sayID = function(){
+            console.log(this.id);
+        };
+
+
+        function Student(n,a,time){
+            this.name = n;
+            this.age = a;
+            this.time = time;
+        }
+        Student.prototype.sayName = function(){
+            console.log(this.name);
+        };
+        Student.prototype.sayAge = function(){
+            console.log(this.age);
+        };
+        Student.prototype.sayTime = function(){
+            console.log(this.time);
+        };*/
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

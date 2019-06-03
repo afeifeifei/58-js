@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 100px;
+            font-size: 12px;
+        }
+
+        #wrap .title{
+            width: 100%;
+            height: 35px;
+            background-color: pink;
+            line-height: 35px;
+            text-align: center;
+            cursor: pointer;
+        }
+        #wrap ul{
+            overflow: hidden;
+            width: 100%;
+            transition: height .2s;
+        }
+
+        #wrap ul.show{
+            height: 90px;
+        }
+        #wrap ul.hide{
+            height: 0;
+        }
+
+        #wrap ul li{
+            width: 100%;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: #f60;
+            color: #fff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <p class="title" id="title">服装</p>
+        <ul id="list" class="hide">
+            <li>衣服</li>
+            <li>裤子</li>
+            <li>鞋子</li>
+        </ul>
+    </div>
+
+    <script>
+
+        /*
+
+        if( 条件 )
+        {
+            //条件为真，运行这里
+        }
+        else
+        {
+            //条件为假，运行这里
+        }
+
+
+
+         */
+
+        /*
+        //title.onclick = function(){};
+        var title = document.getElementById("title");
+        var list = document.getElementById("list");
+        var listCss = getComputedStyle(list);
+        //console.log( listCss.display === "none" );
+        title.onclick = function(){
+            //list.style.display = "block";
+
+            if ( listCss.display === "none" ) {
+
+                list.style.display = "block";
+
+            } else {
+
+                list.style.display = "none";
+
+            }
+
+        };
+        */
+
+        var title = document.getElementById("title");
+        var list = document.getElementById("list");
+
+        title.onclick = function(){
+
+            /*if ( list.className === "hide" ){
+                list.className = "show";
+            } else{
+                list.className = "hide";
+            }*/
+
+            //list.className === "hide" ? (list.className = "show"):(list.className = "hide")
+
+            var bool = list.className === "hide";
+            list.className =  bool ? "show" : "hide";
+
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

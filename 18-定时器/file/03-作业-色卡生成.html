@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        span{
+            display: inline-block;
+            width: 120px;
+            height: 30px;
+            margin: 5px;
+            line-height: 30px;
+            text-align: center;
+            color: #000;
+            font-size: 12px;
+            font-weight: bolder;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="box">
+
+    </div>
+
+    <script>
+
+        (function(){
+            var oBox = document.getElementById("box");
+
+            setInterval(function(){
+
+                var r = Math.floor(Math.random()*256);// [0,1)*256 ---- [0,256)
+                var g = Math.floor(Math.random()*256);// [0,1)*256 ---- [0,256)
+                var b = Math.floor(Math.random()*256);// [0,1)*256 ---- [0,256)
+
+                var color = "rgb("+r+","+g+","+b+")";
+
+                oBox.innerHTML += "<span style='background-color: "+color+"'>"+color+"</span>";
+            },500);
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

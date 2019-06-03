@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        function extend(CLASS){
+            function F(){}
+            F.prototype = CLASS.prototype;
+            return new F();
+        }
+
+        function Hero(n,at){
+            this.name = n;
+            this.at = at;
+        }
+        Hero.prototype.showName = function(){
+            console.log(this.name);
+        };
+        Hero.prototype.showAt = function(){
+            console.log(this.at);
+        };
+
+
+        function AP(n,at,ap){
+            Hero.call(this,n,at);
+            this.ap = ap;
+        }
+        AP.prototype = extend(Hero);
+        AP.prototype.constructor = AP;
+        AP.prototype.damage = function(){
+            console.log(this.name+"造成了"+this.ap*0.8+"点AP伤害");
+        };
+
+
+
+        function AD(n,at,ad){
+            Hero.call(this,n,at);
+            this.ad = ad;
+        }
+        AD.prototype = extend(Hero);
+        AD.prototype.constructor = AD;
+        AD.prototype.damage = function(){
+            console.log(this.name+"造成了"+this.ad*0.56+"点AD伤害");
+        };
+
+
+        var Timor = new AP("提莫",300,256);
+        console.log(Timor);
+        Timor.damage();
+
+        var nj = new AD("女警",400,152);
+        console.log(nj);
+        nj.damage();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

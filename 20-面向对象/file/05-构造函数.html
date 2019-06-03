@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        //构造函数   类
+        function Teacher(n,a){
+            this.name = n;
+            this.age = a;
+            this.company = "潭州教育";
+            this.showInfo = function(){
+                console.log("我是"+this.company+"的"+this.name+"老师，我今年"+this.age+"岁。");
+            };
+        }
+
+        //通过new 类得到对象的过程，我们称为 实例化
+        //得到的这些对象，称之为类的 实例
+        var af = new Teacher("阿飞",18);
+        var yx = new Teacher("言心",39);
+        var ys = new Teacher("银时",30);
+        //...
+
+        console.log(af === yx);
+
+
+        //检测
+        af.showInfo();
+        yx.showInfo();
+        console.log(ys);
+
+        //自执行已经没有意义了
+        //teacher()
+    </script>
+</body>
+</html>
+
+
+
+
+
+

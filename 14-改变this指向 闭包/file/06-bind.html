@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <script>
+
+        /*
+        柯里化
+            降低函数的适用范围，提高函数适用性
+        */
+
+
+        /*function fn(a,b,c){
+            console.log(this);
+            console.log(a + b + c);
+        }
+
+        var x = fn.bind(document,1,2);
+        x(3);*/
+
+        function fn(a,b,c){
+            console.log(a + b + c);
+        }
+
+
+        /*fn(1,4,9);
+        fn(1,4,8);
+        fn(1,4,5);
+        fn(1,4,99);*/
+        var x = fn.bind(null,1,4);
+        x(9);
+        x(8);
+        x(5);
+        x(99);
+
+
+        /*
+        fn(2,3,77);
+        fn(2,3,5);
+        fn(2,3,3);
+        fn(2,3,18);
+         */
+        var y = fn.bind(null,2,3);
+        y (77);
+        y (5);
+        y (3);
+        y (18);
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

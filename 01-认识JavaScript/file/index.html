@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="阿飞飞">
+
+    <style>
+        body{font-family:"Microsoft yahei";}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+
+
+    <script>
+        /*
+        * 严格区分大小写
+        * 语法符号必须是半角符号  （ (
+        * 完整语句结束，加 ; 号
+         */
+
+        //单行注释
+
+
+       /* alert(
+            "这是写在HTML文件里面的js代码()（）。"
+        );
+
+        alert(
+            "这是写在HTML文件里面的js代码()（）。"
+        );*/
+
+       /*
+       function f () {
+           var a = 10;
+           var b = 20;
+       }
+       */
+
+
+
+
+
+        //ALERT("这是写在HTML文件里面的js代码。");
+    </script>
+
+    <!--
+        script如果通过src引入了外部js文件，那么这个script之间的代码是不会解析的
+    -->
+    <script src="1.js"></script>
+
+</head>
+<body style="height: 1000px" onclick="alert('body被点击了')">
+    <div id="wrap" >
+
+    </div>
+
+    <div id="main">
+
+    </div>
+    <script type="text/javascript">
+        /*
+            main相关的js操作
+        */
+    </script>
+
+    <script language="JavaScript"></script>
+
+
+    <script>
+        /*
+        * head里面或者body里面
+        * 通常是放在head或body的最后面
+        * 如果涉及到标签的操作，一定得写到结构后面
+         */
+
+    </script>
+</body>
+</html>

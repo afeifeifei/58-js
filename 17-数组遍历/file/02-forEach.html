@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        table{
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        td{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <table border="1">
+        <thead></thead>
+        <tbody id="tbody">
+            <tr>
+                <th>姓名：</th>
+                <th>年龄</th>
+            </tr>
+            <!--<tr><td>阿飞</td><td>18</td></tr>-->
+        </tbody>
+    </table>
+
+    <script>
+
+        var arr = [
+            {name:"阿飞",age:18}
+            ,{name:"言心",age:35}
+            ,{name:"朝歌",age:40}
+            ,{name:"银时",age:15}
+            ,{name:"心艾",age:17}
+        ];
+
+
+        var tbody = document.getElementById("tbody");
+
+        var html = "";
+
+        /*for ( var i=0;i<arr.length;i++ ){
+            var item = arr[i];
+            html += "<tr><td>"+item.name+"</td><td>"+item.age+"</td></tr>";
+        }*/
+
+        /*arr.forEach( function(a,b,c){
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        } );*/
+        /*arr.forEach( function(item,index){
+            console.log(item);
+            console.log(index);
+        } );*/
+
+        // 不兼容IE8及以下
+        arr.forEach( function(item){
+            html += "<tr><td>"+item.name+"</td><td>"+item.age+"</td></tr>";
+        } );
+
+        tbody.innerHTML += html;
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

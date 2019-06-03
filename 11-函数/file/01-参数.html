@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+            形参
+            实参
+
+            不定参  arguments
+                代表实参的集合（类数组）
+        */
+
+        /*function sum(){
+            alert( a+b );
+        }*/
+
+        //sum(4,5);
+
+
+        function sum(){
+            console.log( arguments );
+            var s = 0;
+            for ( var i=0,len=arguments.length;i<len;i++ ){
+                s += arguments[i];
+            }
+
+            alert( s );
+        }
+
+        sum();
+        sum(10,20);
+        sum(10,20,30);
+        sum(20,20,30,5);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

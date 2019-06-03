@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+        //对象不存在的属性不会报错，只会是undefined
+
+        var afei = {
+            goudan : 123
+        };
+
+        /*
+        要取到afei对象中的goudan属性，有两种写法
+         */
+
+        //第一种方式
+        console.log( afei.goudan );
+        //第二种方式
+        console.log(  afei[ "goudan" ]  );
+
+        //第二方式变换一下
+        var x = "goudan";
+        console.log(  afei[ x ]  );
+
+        // console.log( afei.x ); //取不到值，因为 .操作是访问afei的x属性，此时的 x 不是变量x
+        // console.log( afei."goudan" ); //错误， .操作后面直接是属性名，不能跟字符数据
+        // console.log( afei[ goudan ] ); //错误，[]里面是变量goudan，找不到
+
+
+        //存值两种方式
+        //afei.age = 20;
+        //afei[ "age" ] = 30;
+
+        var y = "age";
+        var z = 40;
+
+        afei[ y ] = z;
+
+
+        console.log(afei);
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

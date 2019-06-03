@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            overflow: hidden;
+            width: 348px;
+            height: 60px;
+            margin: 50px auto;
+        }
+        #wrap ul li{
+            float: left;
+            width: 30px;
+            height: 60px;
+            margin: 0 3px;
+        }
+        #wrap ul li.time{
+            float: left;
+            width: 40px;
+        }
+        #wrap p{
+            width: 40px;
+            height: 60px;
+            transition: .5s;
+        }
+        #wrap p span{
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 60px;
+            text-align: center;
+            font-size: 30px;
+            border-radius: 10px;
+            background: linear-gradient(#434343 0%,#434343 50%,#393939 51%,#393939 100%);
+            color: #fff;
+        }
+        #wrap .mh{
+            display: block;
+            width: 30px;
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            font-size: 30px;
+            font-weight: bolder;
+            font-style: normal;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <ul>
+            <li class="time">
+                <p class="h">
+                    <span class="show">0</span>
+                    <span class="hide">0</span>
+                </p>
+            </li>
+            <li class="time">
+                <p class="h">
+                    <span class="show">0</span>
+                    <span class="hide">0</span>
+                </p>
+            </li>
+            <li>
+                <i class="mh">:</i>
+            </li>
+            <li class="time">
+                <p class="m">
+                    <span class="show">0</span>
+                    <span class="hide">0</span>
+                </p>
+            </li>
+            <li class="time">
+                <p class="m">
+                    <span class="show">0</span>
+                    <span class="hide">0</span>
+                </p>
+            </li>
+            <li>
+                <i class="mh">:</i>
+            </li>
+            <li class="time">
+                <p class="s">
+                    <span class="show">0</span>
+                    <span class="hide">0</span>
+                </p>
+            </li>
+            <li class="time">
+                <p class="s">
+                    <span class="show">0</span>
+                    <span class="hide">0</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+
+        (function(){
+
+            //获取
+            var aP = document.querySelectorAll("#wrap p")
+                ,aShow = document.querySelectorAll("#wrap .show")
+                ,aHide = document.querySelectorAll("#wrap .hide")
+                ,lastTime = "";
+            ;
+
+            //时间显示初始化
+            (function(){
+                lastTime = getTime();
+                aShow.forEach(function(ele,i){
+                    ele.innerHTML = lastTime.charAt(i);
+                });
+            })();
+
+            //每秒的变化
+            setInterval(function(){
+
+                init( getTime() );
+
+            },1000);
+
+            //给show改变内容
+            function init(time){
+                for ( var i=0;i<6;i++ ){
+                    /*//在下次运动前，先拉回原来的位置
+                    aShow[i].innerHTML = lastTime.charAt(i);
+                    aP[i].style.transition = "0s";
+                    aP[i].style.marginTop = "0";
+                    aP[i].offsetLeft;//让页面先重绘，否则，*/
+
+                    if ( time.charAt(i) === lastTime.charAt(i) )continue;
+                    aHide[i].innerHTML = time.charAt(i);
+                    aP[i].style.transition = ".5s";
+                    aP[i].style.marginTop = "-60px";
+
+                    //等运动完了之后，恢复初始的摆放
+                    (function(i){
+                        setTimeout(function(){
+                            aShow[i].innerHTML = time.charAt(i);
+                            aP[i].style.transition = "0s";
+                            aP[i].style.marginTop = "0";
+                        },500);
+                    })(i);
+                }
+
+                lastTime = time;
+            }
+
+            //获取6位时间字符串
+            function getTime(){
+                var date = new Date();
+                var h = date.getHours();
+                var m = date.getMinutes();
+                var s = date.getSeconds();
+
+                //个位补0，得到总共 6位 的字符串。
+                h = (h<10 ? "0":"") + h;
+                m = (m<10 ? "0":"") + m;
+                s = (s<10 ? "0":"") + s;
+
+                return h+m+s;
+            }
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

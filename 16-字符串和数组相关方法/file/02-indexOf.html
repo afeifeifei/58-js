@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        indexOf
+            找出字符串中，某一段字符或一个字符出现的位置，找不到的话，返回-1
+         */
+
+        var a = "今天真高兴，见到了善良的阿飞老师，真是超级帅呢。";
+
+
+        //console.log( a.indexOf("善 良") );
+        //console.log( a.indexOf("，" , 10) );
+
+
+        /*findAll( a , "，");
+
+        function findAll( targetStr,findStr ){
+            var len = targetStr.length;
+            var i=0;
+            while( i<len ){
+                var index = targetStr.indexOf( findStr , i );
+                if ( index === -1 ){
+                    break;
+                } else{
+                    console.log(index);
+                    i = index+1;
+                }
+            }
+
+        }*/
+
+
+        console.log( a.slice(-3, -1) );
+        console.log(a);
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

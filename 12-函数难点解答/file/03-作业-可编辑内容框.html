@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="Author" content="Fly">
+    <title>Title</title>
+    <style>
+        *{ margin: 0; padding: 0; font-family:Microsoft yahei,serif;}
+        li{ list-style:none;}
+        #box ul li{
+            height: 50px;
+            padding-left: 50px;
+            line-height: 50px;
+            font-size: 12px;
+            border-bottom: 1px solid red;
+        }
+        #box ul li span{
+            float: left;
+        }
+        #box ul li input{
+            display: none;
+            float: left;
+            margin-top: 14px;
+            color: #999;
+        }
+        #box ul li.active span{
+            display: none;
+        }
+        #box ul li.active input{
+            display: block;
+        }
+        #box ul li p{
+            float: left;
+            width: 50px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            margin-top: 12px;
+            margin-left: 10px;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li>
+                <span>点击修改</span>
+                <input type="text">
+                <p>修改</p>
+            </li>
+            <li>
+                <span>点击修改</span>
+                <input type="text">
+                <p>修改</p>
+            </li>
+            <li>
+                <span>点击修改</span>
+                <input type="text">
+                <p>修改</p>
+            </li>
+            <li>
+                <span>点击修改</span>
+                <input type="text">
+                <p>修改</p>
+            </li>
+        </ul>
+    </div>
+    <script>
+
+        //IIFE
+        (function(){
+            var aLi = document.querySelectorAll("#box ul li")
+                ,aSpan = document.querySelectorAll("#box span")
+                ,aInput = document.querySelectorAll("#box input")
+                ,aP = document.querySelectorAll("#box p")
+                ,len = aP.length
+            ;
+
+            function clickFn(){
+                var ind = this.index;
+
+                this.bool && (aSpan[ind].innerText = aInput[ind].value);
+                this.innerText = this.bool?"修改":"确定";
+
+                aLi[ind].classList.toggle("active");
+                this.bool = !this.bool;
+
+                //if ( this.bool ){
+                    //改变对应的html
+                    //aSpan[ind].style.display = "block";
+                    //aInput[ind].style.display = "none";
+                    //aLi[ind].classList.add("active");
+                    //aSpan[ind].innerText = aInput[ind].value;
+                    //this.innerText = "修改";
+
+                    //this.bool = false;
+                    //} else{
+                    //改变对应的html
+                    //aSpan[ind].style.display = "none";
+                    //aInput[ind].style.display = "block";
+                    //aLi[ind].classList.remove("active");
+                    //aInput[ind].value = aSpan[ind].innerText;
+                    //this.innerText = "确定";
+
+                    //this.bool = true;
+                //}
+
+
+            }
+
+            for ( var i=0;i<len;i++ ){
+                aP[i].index = i;
+                aP[i].bool = false;
+                aP[i].onclick = clickFn;
+            }
+
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

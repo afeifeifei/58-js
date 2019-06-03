@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #button{
+            width: 100px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            color: #fff;
+            border: 2px solid #999;
+            cursor: pointer;
+        }
+        #button.pink{
+            background-color: pink;
+        }
+        #button.green{
+            background-color: green;
+        }
+        #button.yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="button" class="pink"></div>
+
+    <script>
+
+        var oBtn = document.getElementById("button");
+
+        var index = 0;
+        var arr = ["pink" , "green" , "yellow"];
+
+        oBtn.onclick = function(){
+
+            index ++;
+            index %= arr.length;
+
+            //this.classList.add(    arr[ index ]    )
+            this.className = arr[index];
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

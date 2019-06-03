@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="Anthor" content="阿飞老师" />
+    <title>点击伸缩导航</title>
+    <style>
+        *{ margin:0; padding:0; font-family:"Microsoft yahei",serif;}
+        li{ list-style-type: none;}
+        #box{
+            user-select: none;
+            width: 200px;
+            border: 1px dashed pink;
+            margin: 100px auto;
+        }
+        #box div p{
+            width: 100%;
+            height: 40px;
+            background: #000;
+            color: #fff;
+            line-height: 40px;
+            text-indent: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border-bottom: 1px solid pink;
+        }
+        #box div.active p{
+            background: #f60;
+        }
+        #box div ul{
+            overflow: hidden;
+            height: 0;
+        }
+        #box div.active ul{
+            height: auto;
+        }
+        #box div ul li{
+            width: 100%;
+            height: 25px;
+            line-height: 25px;
+            text-indent: 20px;
+            font-size: 12px;
+            color: #000;
+            background: #eee;
+            margin-bottom: 1px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div>
+            <p>同事</p>
+            <ul>
+                <li>乌拉</li>
+                <li>乌拉拉</li>
+                <li>乌拉拉拉</li>
+            </ul>
+        </div>
+        <div>
+            <p>好友</p>
+            <ul>
+                <li>心艾</li>
+                <li>心艾艾</li>
+                <li>心艾艾艾</li>
+                <li>心艾艾艾艾</li>
+            </ul>
+        </div>
+        <div>
+            <p>同学</p>
+            <ul>
+                <li>木马</li>
+                <li>木马马</li>
+                <li>木马马马</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+
+        var aP = document.querySelectorAll("#box p")
+            ,aDiv = document.querySelectorAll("#box div")
+        ;
+
+        // for ( var i=0;i<aP.length;i++ ){}
+        for ( var i=0,len=aP.length;   i<len  ;   i++ ){
+            aP[i].index = i;
+            aP[i].onclick = function(){
+                aDiv[ this.index ].classList.toggle("active");
+            };
+        }
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

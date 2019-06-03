@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+
+        #tab{
+            width: 400px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        #tab .tab{
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        #tab .tab li{
+            width: 100px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            box-sizing: border-box;
+            background-color: pink;
+            border-right: 1px solid #fff;
+            color: #fff;
+            cursor: pointer;
+            transition: .3s;
+        }
+        #tab .tab li.active{
+            background-color: #f60;
+        }
+        #tab .content{
+            position: relative;
+            width: 100%;
+            height: 270px;
+        }
+        #tab .content li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #aaa;
+            opacity: 0;
+            z-index: 0;
+            transition: opacity .3s;
+        }
+        #tab .content li.active{
+            opacity: 1;
+            z-index: 1;
+        }
+
+        #tab2{
+            overflow: hidden;
+            position: relative;
+            width: 820px;
+            height: 380px;
+            margin: 50px auto;
+        }
+        #tab2 .img{
+            position: relative;
+            width: 100%;
+            height: 340px;
+        }
+        #tab2 .img li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 0;
+            transition: opacity .3s;
+        }
+        #tab2 .img li.active{
+            opacity: 1;
+            z-index: 1;
+        }
+        #tab2 .tab{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        #tab2 .tab li{
+            width: 20%;
+            height: 38px;
+            background-color: #e3e2e2;
+            border-bottom: 2px solid #e3e2e2;
+            text-align: center;
+            line-height: 38px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        #tab2 .tab li.active{
+            background-color: #f5f5f5;
+            color: #cea861;
+            border-bottom: 2px solid #cea861;
+        }
+
+
+        #tab3{
+            overflow: hidden;
+            position: relative;
+            width: 820px;
+            height: 380px;
+            margin: 50px auto;
+        }
+        #tab3 .img{
+            position: relative;
+            width: 100%;
+            height: 340px;
+        }
+        #tab3 .img li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 0;
+            transition: opacity .3s;
+        }
+        #tab3 .img li.active{
+            opacity: 1;
+            z-index: 1;
+        }
+        #tab3 .tab{
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        #tab3 .tab li{
+            width: 20%;
+            height: 38px;
+            background-color: #e3e2e2;
+            border-bottom: 2px solid #e3e2e2;
+            text-align: center;
+            line-height: 38px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        #tab3 .tab li.active{
+            background-color: #f5f5f5;
+            color: #cea861;
+            border-bottom: 2px solid #cea861;
+        }
+        #tab3 .arrow li{
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            width: 30px;
+            height: 40px;
+            margin-top: -20px;
+            background-color: rgba(205,167,98,.5);
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bolder;
+            transition: .2s;
+            cursor: pointer;
+        }
+        #tab3 .arrow :hover{
+            background-color: rgba(205,167,98,.9);
+        }
+        #tab3 .arrow .left{
+            left: 0;
+        }
+        #tab3 .arrow .right{
+            right: 0;
+        }
+
+        #tab4{
+            overflow: hidden;
+            position: relative;
+            width: 820px;
+            height: 380px;
+            margin: 50px auto;
+        }
+        #tab4 .img{
+            position: relative;
+            width: 100%;
+            height: 340px;
+        }
+        #tab4 .img li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 0;
+            transition: opacity .3s;
+        }
+        #tab4 .img li.active{
+            opacity: 1;
+            z-index: 1;
+        }
+        #tab4 .tab{
+            position: absolute;
+            z-index: 2;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        #tab4 .tab li{
+            width: 20%;
+            height: 38px;
+            background-color: #e3e2e2;
+            border-bottom: 2px solid #e3e2e2;
+            text-align: center;
+            line-height: 38px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        #tab4 .tab li.active{
+            background-color: #f5f5f5;
+            color: #cea861;
+            border-bottom: 2px solid #cea861;
+        }
+        #tab4 .arrow li{
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            width: 30px;
+            height: 40px;
+            margin-top: -20px;
+            background-color: rgba(205,167,98,.5);
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            font-size: 12px;
+            font-weight: bolder;
+            transition: .2s;
+            cursor: pointer;
+        }
+        #tab4 .arrow :hover{
+            background-color: rgba(205,167,98,.9);
+        }
+        #tab4 .arrow .left{
+            left: 0;
+        }
+        #tab4 .arrow .right{
+            right: 0;
+        }
+
+        #banner{
+            position: relative;
+            width: 590px;
+            height: 470px;
+            margin: 50px auto;
+            border: 1px solid red;
+        }
+
+        #banner .img{
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        #banner .img ul{
+            width: 100%;
+            height: 100%;
+        }
+        #banner .img ul li{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 0;
+            transition: opacity .5s;
+        }
+        #banner .img ul li.active{
+            opacity: 1;
+            z-index: 1;
+        }
+
+        #banner .tab{
+            position: absolute;
+            z-index: 2;
+            bottom: 20px;
+            left: 20px;
+            width: 50%;
+            height: 20px;
+        }
+        #banner .tab ul li{
+            float: left;
+            width: 6px;
+            height: 6px;
+            background-color: transparent;
+            border: 2px solid rgba(255,255,255,.6);
+            border-radius: 100%;
+            margin: 0 5px;
+            cursor: pointer;
+            box-shadow: 0 0 0 4px rgba(255,255,255,0);
+            transition: background-color .3s,border .3s,box-shadow .3s;
+        }
+        #banner .tab ul li.active{
+            background-color : rgba(255,255,255,1);
+            border: 2px solid rgba(255,255,255,1);
+            box-shadow: 0 0 0 4px rgba(255,255,255,.3);
+        }
+        #banner .arrow div{
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            width: 30px;
+            height: 40px;
+            margin-top: -20px;
+            background-color: rgba(0,0,0,0.3);
+            line-height: 40px;
+            text-align: center;
+            color: rgba(255,255,255,.6);
+            cursor: pointer;
+        }
+        #banner .arrow div.left{
+            left: 0;
+        }
+        #banner .arrow div.right{
+            right: 0;
+        }
+        #banner .arrow div:hover{
+            background-color: rgba(0,0,0,.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="tab2">
+        <ul class="img">
+            <li class="active"><img src="images/1.jpg"></li>
+            <li><img src="images/2.jpg"></li>
+            <li><img src="images/3.jpg"></li>
+            <li><img src="images/4.jpg"></li>
+            <li><img src="images/5.jpg"></li>
+        </ul>
+        <ul class="tab">
+            <li class="active">季中英雄之礼</li>
+            <li>我们的冠军皮肤</li>
+            <li>试炼2019门票</li>
+            <li>晚23点iG再战SKT</li>
+            <li>票选更新英雄</li>
+        </ul>
+    </div>
+
+    <div id="tab">
+        <ul class="tab">
+            <li class="active">A</li>
+            <li>B</li>
+            <li>C</li>
+            <li>D</li>
+        </ul>
+        <ul class="content">
+            <li class="active">A内容A内容A内容A内容</li>
+            <li>B内容B内容B内容B内容</li>
+            <li>C内容C内容C内容C内容</li>
+            <li>D内容D内容D内容D内容</li>
+        </ul>
+    </div>
+
+
+    <div id="tab3">
+        <ul class="img">
+            <li class="active"><img src="images/1.jpg"></li>
+            <li><img src="images/2.jpg"></li>
+            <li><img src="images/3.jpg"></li>
+            <li><img src="images/4.jpg"></li>
+            <li><img src="images/5.jpg"></li>
+        </ul>
+        <ul class="tab">
+            <li class="active">季中英雄之礼</li>
+            <li>我们的冠军皮肤</li>
+            <li>试炼2019门票</li>
+            <li>晚23点iG再战SKT</li>
+            <li>票选更新英雄</li>
+        </ul>
+        <ul class="arrow">
+            <li class="left"> &lt; </li>
+            <li class="right"> &gt; </li>
+        </ul>
+    </div>
+
+    <div id="tab4">
+        <ul class="img">
+            <li class="active"><img src="images/1.jpg"></li>
+            <li><img src="images/2.jpg"></li>
+            <li><img src="images/3.jpg"></li>
+            <li><img src="images/4.jpg"></li>
+            <li><img src="images/5.jpg"></li>
+        </ul>
+        <ul class="tab">
+            <li class="active">季中英雄之礼</li>
+            <li>我们的冠军皮肤</li>
+            <li>试炼2019门票</li>
+            <li>晚23点iG再战SKT</li>
+            <li>票选更新英雄</li>
+        </ul>
+        <ul class="arrow">
+            <li class="left"> &lt; </li>
+            <li class="right"> &gt; </li>
+        </ul>
+    </div>
+
+    <div id="banner">
+        <!--图片区域-->
+        <div class="img">
+            <ul>
+                <li class="active"><img src="img/1.webp"></li>
+                <li><img src="img/2.webp"></li>
+                <li><img src="img/3.webp"></li>
+                <li><img src="img/4.webp"></li>
+                <li><img src="img/5.jpg"></li>
+                <li><img src="img/6.webp"></li>
+            </ul>
+        </div>
+
+        <!--按钮区域-->
+        <div class="tab">
+            <ul>
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <!--左右箭头区域-->
+        <div class="arrow">
+            <div class="left">
+                &lt;
+            </div>
+            <div class="right">
+                &gt;
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        function extend(CLASS){
+            function F(){}
+            F.prototype = CLASS.prototype;
+            return new F();
+        }
+        
+        (function(){
+            //Tab 抽象成面向对象
+            function Tab(tabDOM,contentDOM){
+                this.tabDOM = tabDOM;
+                this.contentDOM = contentDOM;
+                this.len = tabDOM.length;
+
+                this.index = 0; //当前显示的是哪一张
+
+                this.tabClick();
+            }
+            Tab.prototype.tabClick = function(){
+                var This = this;
+                this.tabDOM.forEach(function(ele,index){
+                    ele.onclick = function(){
+                        This.change(index);
+                    };
+                });
+            };
+            Tab.prototype.change = function(index){
+                this.tabDOM[this.index].classList.remove("active");
+                this.contentDOM[this.index].classList.remove("active");
+                this.index = index;
+                this.tabDOM[this.index].classList.add("active");
+                this.contentDOM[this.index].classList.add("active");
+            };
+
+            //TabArrow 继承Tab新增左右按钮的类
+            function TabArrow(tabDOM,contentDOM,arrowDOM){
+                Tab.call(this,tabDOM,contentDOM);
+                this.arrowDOM = arrowDOM;
+                this.arrowClick();
+            }
+            TabArrow.prototype = extend(Tab);
+            TabArrow.prototype.arrowClick = function(){
+                var This = this;
+                this.arrowDOM.forEach(function(ele,i){
+                    ele.onclick = function(){
+                        var index;
+                        if ( i ){
+                            index = This.index + 1;
+                            if(index>=This.len)index = 0;
+                        } else{
+                            index = This.index - 1;
+                            if(index<0)index = This.len-1;
+                        }
+                        This.change(index);
+                    };
+                });
+            };
+
+            //TabArrowAuto 继承TabArrow新增自动轮播
+            function TabArrowAuto (tabDOM,contentDOM,arrowDOM,tab) {
+                TabArrow.call(this,tabDOM,contentDOM,arrowDOM);
+                this.tab = tab;
+                this.auto();
+            }
+            TabArrowAuto.prototype = extend(TabArrow);
+            TabArrowAuto.prototype.auto = function(){
+                var This = this;
+                var timer;
+                function auto(){
+                    timer = setInterval( function(){
+                        var index = This.index + 1;
+                        if(index>=This.len)index = 0;
+                        This.change(index);
+                    },2000)
+                }
+                auto();
+                this.tab.onmouseenter = function(){
+                    clearInterval(timer);
+                };
+                this.tab.onmouseleave = function(){
+                    auto();
+                };
+            };
+
+
+
+            //Tab 实例1
+            new Tab(
+                document.querySelectorAll("#tab .tab li")
+                ,document.querySelectorAll("#tab .content li")
+            );
+
+            //Tab 实例2
+            new Tab(
+                document.querySelectorAll("#tab2 .tab li")
+                ,document.querySelectorAll("#tab2 .img li")
+            );
+
+            //TabArrow 实例3
+            new TabArrow(
+                document.querySelectorAll("#tab3 .tab li")
+                ,document.querySelectorAll("#tab3 .img li")
+                ,document.querySelectorAll("#tab3 .arrow li")
+            );
+
+            // TabArrowAuto 实例4
+            new TabArrowAuto(
+                document.querySelectorAll("#tab4 .tab li")
+                ,document.querySelectorAll("#tab4 .img li")
+                ,document.querySelectorAll("#tab4 .arrow li")
+                ,document.querySelector("#tab4")
+            );
+
+            //TabArrowAuto 实例5
+            new TabArrowAuto(
+                document.querySelectorAll("#banner .tab li")
+                ,document.querySelectorAll("#banner .img li")
+                ,document.querySelectorAll("#banner .arrow div")
+                ,document.querySelector("#banner")
+            );
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

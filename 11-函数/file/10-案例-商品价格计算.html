@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{ margin:0; padding:0; font-family:"Microsoft yahei",serif;}
+        li{ list-style-type: none;}
+        table{
+            width: 1000px;
+            border-collapse: collapse;
+            border-color: #930;
+            margin: 50px auto 0;
+            user-select: none;
+        }
+        table tr td{
+            width: 250px;
+            height: 100px;
+            text-align: center;
+        }
+        table tr.title td{
+            height: 50px;
+            background: #c36;
+            color: #fff;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        table tr td img{
+            display: block;
+            width: auto;
+            height: 70px;
+            margin: 0 auto;
+        }
+        table tr td.number span{
+            display: inline-block;
+            font-size: 12px;
+            text-align: center;
+        }
+        table tr td.number span.down,table tr td.number span.add{
+            width: 30px;
+            height: 30px;
+            background: #ddd;
+            line-height: 30px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        table tr td.number span.num{
+            width: 50px;
+            height: 28px;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            line-height: 28px;
+            color: #c36;
+        }
+        .box{
+            width: 1000px;
+            height: 50px;
+            background: #c36;
+            margin: 10px auto;
+        }
+        .box p{
+            float: right;
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+            font-size: 14px;
+        }
+        .box p span{
+            color: #f4e5a9;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <thead></thead>
+        <tbody>
+            <tr class="title">
+                <td>商品</td>
+                <td>单价</td>
+                <td>数量</td>
+                <td>小计</td>
+            </tr>
+            <tr>
+                <td><img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-03/img/shop1.jpg" alt=""></td>
+                <td class="danjia">8</td>
+                <td class="number"><span class="down">-</span><span class="num">0</span><span class="add">+</span></td>
+                <td class="price">0</td>
+            </tr>
+            <tr>
+                <td><img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-03/img/shop2.jpg" alt=""></td>
+                <td class="danjia">10</td>
+                <td class="number"><span class="down">-</span><span class="num">0</span><span class="add">+</span></td>
+                <td class="price">0</td>
+            </tr>
+            <tr>
+                <td><img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-03/img/shop3.jpg" alt=""></td>
+                <td class="danjia">12.5</td>
+                <td class="number"><span class="down">-</span><span class="num">0</span><span class="add">+</span></td>
+                <td class="price">0</td>
+            </tr>
+            <tr>
+                <td><img src="https://afeifeifei.github.io/class-demo/js-demo/2-08-03/img/shop4.jpg" alt=""></td>
+                <td class="danjia">23</td>
+                <td class="number"><span class="down">-</span><span class="num">0</span><span class="add">+</span></td>
+                <td class="price">0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="box">
+        <p class="totalPrice">合计费用： <span>0</span> ￥</p>
+        <p class="totalNum">已选中商品： <span>0</span> 个</p>
+    </div>
+    <script>
+
+        (function(){
+
+            //获取元素
+            var aDown = document.querySelectorAll(".down")
+                ,aNum = document.querySelectorAll(".num")
+                ,aAdd = document.querySelectorAll(".add")
+                ,aPrice = document.querySelectorAll(".price")
+                ,oTotalNum = document.querySelector(".totalNum span")
+                ,oTotalPrice = document.querySelector(".totalPrice span")
+            ;
+            //定义辅助变量
+            var len = aAdd.length;
+            //模拟数据
+            var DATA = [
+                {dj:8,num:0},
+                {dj:10,num:0},
+                {dj:12.5,num:0},
+                {dj:23,num:0}
+            ];
+
+
+            //变化函数
+            function change(bool,ind){
+                //var ind = this.index; //当前操作的商品 序号
+                var thisData = DATA[ind]; //当前商品对应的信息
+
+                //根据按钮传过来的布尔值得知是增加还是减少
+                if ( bool ){
+                    thisData.num ++;
+                } else{
+                    thisData.num --;
+                    if(thisData.num<0)thisData.num=0;
+                }
+
+                //改变当前商品的数量和总价
+                aNum[ ind ].innerText = thisData.num;
+                aPrice[ ind ].innerText = thisData.num*thisData.dj;
+
+                //计算商品总价与总数
+                var tNum = 0,tPrice = 0;
+                for(var j=0;j<len;j++){
+                    tNum += DATA[j].num;
+                    tPrice += DATA[j].num*DATA[j].dj;
+                }
+                oTotalNum.innerText = tNum;
+                oTotalPrice.innerText = tPrice;
+            }
+
+            //添加事件
+            for ( var i=0;i<len;i++ ){
+                aDown[i].index = i; //存储两个按钮对应的序号
+                aAdd[i].index = i;
+                // - 按钮添加事件
+                aDown[i].onclick = function(){
+                    change(false,this.index);
+                };
+                // + 按钮添加事件
+                aAdd[i].onclick = function(){
+                    change(true,this.index);
+                };
+            }
+
+            //添加事件
+            /*for ( var i=0;i<len;i++ ){
+                aDown[i].index = i; //存储两个按钮对应的序号
+                aAdd[i].index = i;
+
+                // - 按钮添加事件
+                aDown[i].onclick = function(){
+                    var ind = this.index; //当前操作的商品 序号
+                    var thisData = DATA[ind]; //当前商品对应的信息
+
+                    //改变当前商品的数量和总价
+                    aNum[ ind ].innerText = thisData.num ? (--thisData.num) : 0;
+                    aPrice[ ind ].innerText = thisData.num*thisData.dj;
+
+                    //计算商品总价与总数
+                    var tNum = 0,tPrice = 0;
+                    for(var j=0;j<len;j++){
+                        tNum += DATA[j].num;
+                        tPrice += DATA[j].num*DATA[j].dj;
+                    }
+                    oTotalNum.innerText = tNum;
+                    oTotalPrice.innerText = tPrice;
+                };
+
+                // + 按钮添加事件
+                aAdd[i].onclick = function(){
+                    var ind = this.index; //当前操作的商品 序号
+                    var thisData = DATA[ind]; //当前商品对应的信息
+
+                    //改变当前商品的数量和总价
+                    aNum[ ind ].innerText = ++thisData.num;
+                    aPrice[ ind ].innerText = thisData.num*thisData.dj;
+
+                    //计算商品总价与总数
+                    var tNum = 0,tPrice = 0;
+                    for(var j=0;j<len;j++){
+                        tNum += DATA[j].num;
+                        tPrice += DATA[j].num*DATA[j].dj;
+                    }
+                    oTotalNum.innerText = tNum;
+                    oTotalPrice.innerText = tPrice;
+                };
+            }*/
+
+
+
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

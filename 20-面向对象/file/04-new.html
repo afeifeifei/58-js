@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        new 关键词
+            后面必须跟上的是函数，该函数也会执行，只不过会产生一些变化
+
+        new 执行函数和 普通的执行函数 的 区别：
+            * 通过new执行函数，函数内部会自动创建一个全新对象，this指向这个对象
+            * 通过new执行函数，函数不再默认返回undefined，而是返回刚刚创建的对象（也就是this指向的对象）
+
+         */
+
+        function fn(){
+            console.log(this);
+        }
+
+
+        var a = fn();
+        console.log(a);
+
+        var b = new fn();
+        console.log(b);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

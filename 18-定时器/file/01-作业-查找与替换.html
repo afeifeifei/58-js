@@ -1,0 +1,140 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="keywords" content="关键词">
+    <meta name="description" content="描述">
+    <meta name="author" content="潭州教育-阿飞老师">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 640px;
+            height: 315px;
+            margin: 50px auto;
+            border: 1px solid #bbb;
+            border-radius: 5px;
+        }
+        #wrap .top{
+            width: 600px;
+            height: 40px;
+            padding-top: 30px;
+            margin: 0 auto;
+        }
+        #wrap .top input{
+            margin:0 5px;
+            outline: none;
+        }
+        #wrap .top input[type=text]{
+            width: 180px;
+            height: 36px;
+            border:1px solid #bbb;
+            text-indent: 5px;
+
+        }
+        #wrap .top input[type=button]{
+            width: 50px;
+            height: 40px;
+        }
+        #wrap .bottom{
+            margin-top: 20px;
+        }
+        #wrap .bottom p{
+            margin: 5px 0;
+            font-size: 15px;
+            text-indent: 2em;
+            line-height: 25px;
+        }
+        #wrap .bottom p b{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="top">
+            <input type="text" placeholder="搜索内容">
+            <input type="button" value="搜索">
+            <input type="text" placeholder="替换内容">
+            <input type="button" value="替换">
+            <input type="button" value="重置">
+        </div>
+
+        <div class="bottom">
+            <p>张家界是湖南省辖地级市，原名大庸市，辖2个市辖区（永定区、武陵源区）、2个县（慈利县、桑植县）。位于湖南西北部，澧水中上游，属武陵山区腹地。[1] 张家界因旅游建市，是中国最重要的旅游城市之一，是湘鄂渝黔革命根据地的发源地和中心区域。</p>
+            <p>1982年9月，张家界国家森林公园成为中国第一个国家森林公园。</p>
+            <p>1988年8月，张家界武陵源风景名胜区被列入国家重点风景名胜区；1992年，由张家界国家森林公园等三大景区构成的武陵源风景名胜区被联合国教科文组织列入《世界自然遗产名录》；2004年2月，被列入全球首批《世界地质公园》；2007年，被列入中国首批国家5A级旅游景区。[2]</p>
+        </div>
+    </div>
+
+    <script>
+
+        (function(){
+
+            var aInp = document.querySelectorAll("#wrap .top input");
+            var content = document.querySelector("#wrap .bottom");
+            var html = content.innerHTML; //获取最初始的html内容
+            var lastB = "";
+
+            //搜索按钮的点击
+            aInp[1].onclick = function(){
+                var val = aInp[0].value; //获取搜索输入框的内容
+
+                //只有当有内容的时候，才需要做接下来的事情
+                if ( val ){
+                    content.innerHTML = html.split( val ).join( "<b>"+val+"</b>" );
+                    lastB = val;
+                }
+                aInp[0].value = "";
+            };
+
+            //替换按钮的点击
+            aInp[3].onclick = function(){
+                var val1 = aInp[0].value; //获取搜索框的内容
+                var val2 = aInp[2].value; //获取替换框的内容
+
+                if ( val1 && val2 ){
+                    content.innerHTML = html.split( val1 ).join( "<b>"+val2+"</b>" );
+                    lastB = val2;
+                }
+
+                aInp[0].value = "";
+                aInp[2].value = "";
+            };
+
+            //重置
+            aInp[4].onclick = function(){
+                if ( lastB ){
+                    aInp[0].value = "";
+                    aInp[2].value = "";
+                    content.innerHTML = content.innerHTML.split("<b>"+lastB+"</b>").join(lastB);
+                    lastB = "";
+                }
+            };
+
+
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

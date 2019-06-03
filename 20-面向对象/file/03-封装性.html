@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        需要创建多个同种类的对象，属性/方法 都一样，我们可以封装成一个函数
+         */
+
+        //工厂模式
+        function teacher(n,a){
+            var obj = {};
+
+            obj.name = n;
+            obj.age = a;
+            obj.company = "潭州教育";
+            obj.showInfo = function(){
+                console.log("我是"+this.company+"的"+this.name+"老师，我今年"+this.age+"岁。");
+            };
+
+            return obj;
+        }
+
+        var af = teacher("阿飞",18);
+        var yx = teacher("言心",39);
+        var ys = teacher("银时",30);
+        //...
+
+        console.log(af === yx);
+
+
+        //检测
+        af.showInfo();
+        yx.showInfo();
+        console.log(ys);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

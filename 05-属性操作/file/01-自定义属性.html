@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+
+    <style>
+        div#wrap {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+    <style id="css">
+
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+
+    </div>
+
+    <script>
+
+        /*
+        var oWrap = document.getElementById("wrap");
+        console.dir(oWrap);
+        oWrap.afei = "阿飞";
+        */
+
+        /*
+        外部样式表  //不可以操作
+        内部样式表
+        行内样式
+         */
+
+        //var oCss = document.getElementById("css");
+
+        //可以操作，但是要先手动去找出选择是的最高优先级，这样很麻烦，所以很少用这样的方式
+        //oCss.innerText = "#wrap{width:50px;height:50px;background-color:red;}"
+        //console.log(oCss.style);
+        var oWrap = document.getElementById("wrap");
+
+        oWrap.style.width = "50px";
+        oWrap.style.height = "50px";
+        oWrap.style.backgroundColor = "green";
+
+        //oWrap.style.cssFloat = 'left';
+        //oWrap.style.styleFloat = "left";
+
+        //WebkitLinearGradient
+
+        //oWrap.style["background-color"] = "red";
+        console.log(oWrap.style);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

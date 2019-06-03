@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        p{
+            font-size: 40px;
+        }
+        span{
+            font-weight: bolder;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    
+    <p>距离2020年元旦还有 <span>0</span>天 <span>0</span>小时 <span>0</span>分钟 <span>0</span>秒</p>
+    
+    <script>
+
+        /*(function(){
+
+            var date2020 = new Date(2020,0);
+            var aSpan = document.querySelectorAll("span");
+
+
+            function time(){
+
+                var now = new Date;
+
+                var d_ = date2020 - now;
+
+                //console.log(d_);
+                var day = Math.floor(d_/1000/60/60/24)
+                    ,hours = Math.floor(d_/1000/60/60%24)
+                    ,minutes = Math.floor(d_/1000/60%60)
+                    ,seconds = Math.floor(d_/1000%60)
+                ;
+                var arr = [day,hours,minutes,seconds];
+
+                //console.log(day,hours,minutes,seconds);
+                aSpan.forEach(function(ele,i){
+                    ele.innerText = arr[i] + "";
+                });
+
+            }
+
+            time();
+
+            setInterval(time,1000);
+
+
+        })();*/
+
+        (function(){
+
+            var date2020 = new Date(2020,0);
+            var aSpan = document.querySelectorAll("span");
+
+
+            function time(){
+                var now = new Date;
+
+                var d_ = date2020 - now;
+
+                //console.log(d_);
+                var day = Math.floor(d_/1000/60/60/24)
+                    ,hours = Math.floor(d_/1000/60/60%24)
+                    ,minutes = Math.floor(d_/1000/60%60)
+                    ,seconds = Math.floor(d_/1000%60)
+                ;
+                var arr = [day,hours,minutes,seconds];
+
+                //console.log(day,hours,minutes,seconds);
+                aSpan.forEach(function(ele,i){
+                    ele.innerText = arr[i] + "";
+                });
+
+                return time;
+            }
+
+            setInterval(time(),1000);
+
+
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
