@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        //let arr = [1,2,3,4];
+
+        //console.log( ...arr );
+        //console.log( 1,2,3,4 );
+
+        /*var arr = [1,2,3,4];
+
+        var arr1 = [];
+
+        for ( var i=0;i<arr.length;i++ ) {
+            arr1[i] = arr[i];
+        }
+
+        arr1.push(5);
+        console.log(arr);*/
+
+
+        /*
+        let arr = [1,2,3,4];
+        let arr1 = arr;
+        arr1.push(5);
+        console.log(arr);
+        */
+
+        /*let arr = [1,2,3,4];
+
+        let arr1 = [  ...arr  ];
+
+        arr1.push(5);
+        console.log(arr);
+        console.log(arr1);*/
+
+        /*let arr = [..."阿飞老师"];
+
+        console.log(arr);*/
+
+
+        /*var arr = [1,2,4,5,8,2,3,9,5,1,2,4];
+
+        //var max = Math.max.apply(Math,arr);
+
+        //Math.max(1,2,4,5,8,2,3,9,5,1,2,4);
+        //Math.max.call(Math,1,2,4,5,8,2,3,9,5,1,2,4);
+        //Math.max.apply(Math,[1,2,4,5,8,2,3,9,5,1,2,4]);
+
+        var max = Math.max.apply(Math,arr);
+
+        console.log(max);*/
+
+        let arr = [1,2,4,5,8,2,3,9,5,1,2,4];
+        let max = Math.max(...arr);
+        console.log(max);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        ES6 低版本ie完全不兼容  甚至IE9 10都有些不兼容
+        不用担心，可以用工具转换成ES5
+         */
+
+        /*
+        let
+        const
+         */
+
+
+        //遵守从上到下的解析原则
+        //console.log(x); //报错
+        //let x = 10;
+
+
+
+        /*var a = 10;
+        function fn(){
+            console.log(a);
+            var a = 5;
+        }
+        fn();*/
+        /*
+        //暂时性死区
+        let a = 10;
+        function fn(){
+            //如果在当前作用域有let定义过该变量，那么再定义之前，不允许使用，无论作用域链上有没有该变量
+            console.log(a);
+            let a = 5;
+        }
+        fn();*/
+
+        //相同变量名，同一个作用域不允许定义两次
+        /*let a = 0;
+        let a = 2;*/
+        /*var  a = 5;
+        let a = 10;*/
+        /*function fn(a){
+            let a = 10;
+            console.log(a);
+        }
+        fn(5);*/
+
+
+        //常量
+
+        /*const a = 10;
+        a = 5; //报错，常量不允许被重新赋值*/
+
+        //const a; //报错，常量定义不允许不赋值
+
+        //const b = [1,2,3];
+        //b.push(4); //不报错
+
+        //const a = undefined; //这个可以，只不过这样做没有实际意义
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

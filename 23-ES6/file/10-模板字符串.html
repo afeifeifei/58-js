@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        //字面量
+        /*var str = "afield";
+        var str2 = '阿飞';*/
+
+        //模板字符串
+        //let s = ``;
+
+        /*var html = "<div>" +
+            "<p>" +
+                "<a href=''></a>" +
+            "</p>" +
+        "</div>";*/
+
+        //任意换行
+        /*let html = `<div>
+            <p>
+                <a href=""></a>
+            </p>
+        </div>`;*/
+
+
+        /*var obj = {
+            name :"阿飞"
+            ,age : 20
+        };
+        console.log( "我是" + obj.name + "老师，今年" + obj.age + "岁" );*/
+
+        let obj = {
+            name : `阿飞`
+            ,age : 20
+        };
+
+        console.log( `我是${obj.name}老师，今年${obj.age}岁` );
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

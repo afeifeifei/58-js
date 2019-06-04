@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*function a( [x,y] ){
+            console.log(x);
+            console.log(y);
+        }
+
+        a( [1,2] );*/
+
+        /*function a( [x=3,y] ){
+            console.log(x);
+            console.log(y);
+        }
+
+        a( [null,1] );*/
+
+        /*function a( {name,age} ){
+            console.log(name);
+            console.log(age);
+        }
+
+        a(   {name : '阿飞',age : 18}   )*/
+
+        /*function a( {name:n,age:a=20} ){
+            console.log(n);
+            console.log(a);
+        }
+
+        a(   {name : '阿飞'}   )*/
+
+        function a( {name,age=20} ){ // {name:name,age:age=20}
+            console.log(name);
+            console.log(age);
+        }
+
+        a(   {name : '阿飞'}   );
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

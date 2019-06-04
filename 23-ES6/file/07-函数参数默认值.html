@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*function sum(a,b=10){
+            alert(  a+b)
+        }
+
+        sum(1,2);
+        sum(1);*/
+
+
+        /*function sum(a=10,b){
+            alert(  a+b)
+        }*/
+
+
+        //当执行的时候 某个形参 === undefined 的时候，使用到它设置的默认值
+
+        function sum(a,b=5,c=6){
+            alert(  a+b+c )
+        }
+        sum(1,2)
+
+        /*function sum(a=4,b,c=6){
+            alert(  a+b+c )
+        }
+        sum(undefined,1,2)*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

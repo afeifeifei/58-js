@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*(function(){
+            var a = 10;
+        })();*/
+
+        //块作用域，相当于是一个函数自执行
+        {
+            let a = 10;
+            console.log(a);
+        };
+
+
+        let a = {
+            //let g = 10; //这里不是代表作用域
+            x : 20 //只允许定义对象属性
+        }; //此时 {} 代表是对象的定义，不表示作用域，也就是说，只能写定义对象的代码
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

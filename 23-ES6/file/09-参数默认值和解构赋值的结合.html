@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*function a( {name="阿飞",age=20} ){
+
+            console.log(name);
+            console.log(age);
+        }
+
+        //a( ); //报错 {name="阿飞",age=20} = undefined
+        a( {} ); // {name="阿飞",age=20} = {}*/
+
+        //在没有形参的时候，默认使用 {name:"阿飞",age:30} 这个形参
+        function a( {name,age} = {name:"阿飞",age:30} ){
+
+            console.log(name);
+            console.log(age);
+        }
+
+        a(); //阿飞 30
+        a( {} ); //undefined  undefined
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
