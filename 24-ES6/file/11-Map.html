@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+
+         */
+
+        /*let x = {name:"阿飞"};
+        let y = {};
+
+
+        let obj = {
+            [x] : 123
+        };
+
+        console.log(obj);
+        console.log(obj[y]);*/
+
+        let m = new Map();
+
+        let x = {};
+
+        m.set( true , 123 );
+        m.set( 10 , 789 );
+        m.set( x , "阿飞" );
+
+        /*console.log(m);
+
+        console.log(m.get(true));
+        console.log(m.get(10));
+        console.log(m.get(x));*/
+
+        for(let [key,value] of m){
+            console.log(key, value);
+        }
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

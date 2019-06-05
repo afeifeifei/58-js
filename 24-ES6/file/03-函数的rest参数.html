@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*function a ( [a,b] ) {
+            console.log(a);
+            console.log(b);
+        }
+
+        a([1,2])*/
+
+        //函数的rest参数，和解构意义一样，接受剩余的参数
+        /*function a(x,y,...z){
+            console.log(x);
+            console.log(y);
+            console.log(z);
+        }
+
+        a(1,2,3,4,5,6);*/
+
+
+        function a(...z){
+            console.log(z);
+        }
+
+        a(1,2,3,4,5,6);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

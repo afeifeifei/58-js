@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        //数组
+        let arr = ["阿飞","言心","朝歌","银时","追梦"];
+
+       /*
+        //很少直接使用
+       console.log(   [...arr.keys()]  );
+        console.log(   [...arr.values()]  );
+        console.log(   [...arr.entries()]  );
+        */
+
+
+       //数组并不是很常用forof遍历，因为forEach很好用
+
+       /*for(let [key,value] of arr.entries()){
+           console.log(key);
+           console.log(value);
+       }*/
+       for(let k of arr){
+           console.log(k);
+       }
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

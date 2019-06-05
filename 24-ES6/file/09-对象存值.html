@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*var key = "name";
+
+        var obj = {
+            "key" : "阿飞"
+        };
+
+        //obj[key] = "阿飞";
+
+        console.log(obj);*/
+
+
+
+        /*let key = "name";
+
+        let obj = {
+            [key] : "阿飞"
+        };
+
+        console.log(obj);*/
+
+        let a = Symbol();
+        let b = Symbol();
+
+        let obj = {
+            a : 80
+            ,[a] : "阿飞"
+            ,[b] : "言心"
+            ,[Symbol()] : "朝歌"
+        };
+
+        console.log(obj);
+
+        console.log(obj[a]);
+        console.log(obj['a']);
+        console.log(obj.a);
+
+        console.log(obj[Object.getOwnPropertySymbols(obj)[2]]);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

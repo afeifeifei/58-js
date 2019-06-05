@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+
+        /*function a(){
+            console.log(this);
+        }
+
+        document.onclick = a;
+
+        a();
+
+        a.call({name:"阿飞"});*/
+
+
+        /*let a = ()=>{
+            console.log(this);
+        };
+
+        a();
+
+        //console.dir(a);
+        a.call({name:"阿飞"});
+
+        document.onclick = a;*/
+
+
+
+        document.onclick = function(){
+
+            let a = ()=>{
+                console.log(this);
+            };
+
+            a();
+
+        };
+
+        /*
+        不能用作构造函数（不能new 执行）
+        没有arguments
+
+         */
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

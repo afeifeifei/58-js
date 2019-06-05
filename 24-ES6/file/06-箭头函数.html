@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        //
+
+        /*let a = function (x,y){
+            console.log(x + y);
+        };*/
+
+        /*let b = (x,y) => {
+            console.log(x + y);
+        };
+        b(1,2);*/
+
+
+        //箭头函数的一些简写
+
+        //当形参有且仅有一个的时候
+        /*let b = (x)=>{
+            console.log(x * 2);
+        };*/
+        /*let b = x=>{
+            console.log(x * 2);
+        };
+
+        b(8);*/
+
+        //当{}中代码只有一行的时候，可以省略大括号
+        //但是省略了大括号之后，函数默认的返回值，就变成了那唯一一句表达式的值
+        let b = (a,b)=>a*b;
+
+        let x = b(2,3);
+        console.log(x);
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

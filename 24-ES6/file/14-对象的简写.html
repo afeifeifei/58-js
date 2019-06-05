@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+        let x = 10;
+        let y = 20;
+
+
+        /*let obj = {
+            x : x
+            ,y : y
+            ,sum : function(){
+                return this.x+this.y;
+            }
+        };*/
+
+        /*
+        * 如果值使用的是某个变量，而这个变量名恰好和属性名一样的时候，可以简写
+        * 方法可以简写
+         */
+
+        let obj = {
+            x
+            ,y
+            ,sum(){
+                return this.x+this.y;
+            }
+        };
+
+        console.log(obj);
+        console.log(obj.sum());
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

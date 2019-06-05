@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+
+        class Person{
+            constructor(n,a){
+                this.name = n;
+                this.age = a;
+            }
+            showName(){
+                console.log(this.name);
+                console.log(this.name);
+                console.log(this.name);
+                console.log(this.name);
+                console.log(this.name);
+                console.log(this.name);
+                console.log(this.name);
+                console.log(this.name);
+                console.log(this.name);
+                console.log(this.name);
+            }
+            showAge(){
+                console.log(this.age);
+            }
+        }
+
+
+        //继承
+        class Teacher extends Person{
+            constructor (n,a,i){
+                super(n,a); //继承之后，必须执行super这样才能继承私有属性
+
+                this.id = i;
+            }
+            //原型默认继承，不需要写任何的东西
+
+            //可以更改原来的原型方法
+            showName(){
+                super.showName(); //执行原来的原型方法
+                console.log("潭州教育"); //新的内容
+            }
+
+
+            //新增原型方法
+            showID(){
+                console.log(this.id);
+            }
+        }
+
+
+        var af = new Teacher("阿飞",18,1620);
+
+        console.log(af);
+
+        af.showName();
+
+
+        var p = new Person("张三",18)
+        console.log(p);
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
