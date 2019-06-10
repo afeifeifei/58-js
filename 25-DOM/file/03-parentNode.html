@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <div class="xx" style="position:absolute">
+
+        <div afei="123">
+
+            <p id="ppp"></p>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let oP = document.getElementById("ppp");
+
+        console.log(oP.parentNode); //结构上的父节点
+
+        console.log(oP.offsetParent); //定位父节点（离oP最近的，拥有定位属性的父级）
+
+        console.log(oP.parentNode.parentNode.parentNode); //获取"曾祖父"节点
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

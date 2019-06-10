@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <p id="goudan">狗蛋</p>
+    </div>
+
+    <script>
+
+        /*
+        创建节点
+            document.createElement(标签名)
+
+        父节点.appendChild( 子节点 )
+         */
+
+        let oWrap = document.getElementById("wrap");
+        let oG = document.getElementById("goudan");
+        oG.onclick = function(){
+            alert(1);
+        };
+
+        //先创建a节点
+        let a = document.createElement("a");
+        a.href = "http://www.tanzhouedu.com";
+        a.innerText = "潭州教育";
+        a.className = "tz";
+
+        //再添加
+        oWrap.appendChild(a);
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

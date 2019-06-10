@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        div{
+            overflow: hidden;
+            width: 100px;
+            height: 200px;
+            border: 5px solid pink;
+            margin: 20px 30px;
+            padding: 15px 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        暗示水电费uuuuuuuuuuu
+        暗示水电费
+        暗示水电费
+        暗示水电费
+        暗示水电费
+        暗示水电费
+        暗示水电费
+        暗示水电费
+        暗示水电费
+        暗示水电费
+        暗示水电费
+        暗示水电费
+        暗示水电费
+        暗示水电费
+    </div>
+
+    <script>
+
+        let div = document.getElementsByTagName("div")[0];
+
+        console.log(div.clientWidth); //150   width+padding
+        console.log(div.clientHeight); //230   height+padding
+
+        console.log(div.offsetWidth); //160 width+padding+border
+        console.log(div.offsetHeight); //240 height+padding+border
+
+        console.log(div.scrollWidth); //150
+        console.log(div.scrollHeight); //309
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

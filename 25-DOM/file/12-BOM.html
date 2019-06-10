@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>25-DOM BOM</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body style="height: 2000px">
+    
+    <script>
+
+        /*
+        Browser Object Model 浏览器对象模型
+
+        几个事件
+            onresize  改变大小的时候触发
+            onscroll  滚动高度变化的时候触发
+            onfocus/onblur  得到/失去焦点的时候触发
+         */
+
+        /*window.onresize = function(){
+            console.log(1);
+        };*/
+
+        /*window.onscroll = function(){
+            console.log(1);
+        };*/
+
+        window.onfocus = function(){
+            //浏览器当前页面的时候，触发
+            //console.log(1);
+            document.title = "25-DOM BOM";
+        };
+        window.onblur = function(){
+            //离开当前页面的时候，触发
+            //console.log(2);
+            document.title = "快回来！！出bug了！！";
+        };
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

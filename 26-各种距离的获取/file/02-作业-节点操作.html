@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>hello world~!!</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <style>
+        *{margin: 0;padding: 0;}
+        body{font:16px/1.5 'Microsoft Yahei';user-select: none;}
+        .clearfix:after{content:'';display:block;clear:both;}
+        .fl{float:left;}
+        .fr{float:right;}
+        #wrap{
+            height:580px;
+            background:linear-gradient(180deg,#8CC1DE,#F9A886);
+            overflow:hidden;
+        }
+        #wrap .container{
+            width:800px;
+            margin:50px auto;
+        }
+        #wrap .container .target{
+            width:50%;
+            background-color: #fff;
+            line-height:2;
+            min-height:550px;
+        }
+        #wrap .container .target p{
+            margin:50px 20px 0;
+            color:#F9A886;
+        }
+        #wrap .container .target a{
+            background-color: #fff;
+            text-decoration: none;
+            color:#000;
+        }
+        #wrap .container .target a:hover{
+            color:red;
+        }
+        #wrap .container .target ol li{
+            list-style: none;
+            font-style:normal;
+            display: inline-block;
+            margin:10px 0 0 20px ;
+            padding:0 5px;
+            color:#999;
+            border:1px solid #ccc;
+
+        }
+        #wrap .container .target ol li:hover i{
+            color:red;
+            cursor:pointer;
+
+        }
+        #wrap .container .target ol li span{
+            padding-right:5px;
+        }
+        #wrap .container .target ol li i{
+            padding:0 5px;
+            border-left:1px solid #ccc;
+
+        }
+        #wrap .container .show{
+            width:50%;
+            min-height:550px;
+            background-color: rgba(0,0,0,0.5);
+
+        }
+        #wrap .container .show ul{
+            margin-top:50px;
+
+        }
+        #wrap .container .show ul li{
+            list-style: none;
+            font-style:normal;
+            display: inline-block;
+            margin:20px;
+            padding:5px;
+            border:1px solid #ccc;
+            color:#fff;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="container clearfix">
+            <div class="target fl">
+                <p> 热门目的地：
+                    <a href="javascript:;">马来西亚</a>
+                    <a href="javascript:;">泰国</a>
+                    <a href="javascript:;">三亚</a>
+                    <a href="javascript:;">新西兰</a>
+                    <a href="javascript:;">云南</a>
+                </p>
+                <ol class='clearfix'>
+
+
+                </ol>
+            </div>
+            <div class="show fr">
+                <ul class='clearfix'>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script>
+
+    (function(){
+
+        //变量
+        let aA = document.querySelectorAll("#wrap .target a")
+            ,oOl = document.querySelector("#wrap .target ol")
+            ,oUl = document.querySelector("#wrap .show ul")
+        ;
+        //事件函数提出来
+        function aClick(){
+            if(this.bool)return;
+
+            this.bool = true;
+            let This = this;
+
+            //获取点击的a的text
+            let text = this.innerText;
+
+            //创建两个li分别加入到页面中对应的位置
+            let leftLi = document.createElement("li")
+                ,rightLi = document.createElement("li")
+            ;
+            oOl.appendChild(leftLi);
+            oUl.appendChild(rightLi);
+
+            //完善leftLi里面的内容
+            (function(){
+                let span = document.createElement("span");
+                let i = document.createElement("i");
+
+                span.innerText = text;
+                i.innerText = "x";
+
+                i.onclick = function(){
+                    oOl.removeChild(leftLi);
+                    oUl.removeChild(rightLi);
+                    This.bool = false;
+                };
+
+                leftLi.appendChild(span);
+                leftLi.appendChild(i);
+            })();
+
+            //完善rightLi里面的内容
+            (function(){
+                let span = document.createElement("span");
+
+                span.innerText = text;
+
+                rightLi.appendChild(span);
+            })();
+
+        }
+
+        //给a加点击事件
+        aA.forEach(item=>{
+            item.onclick = aClick;
+        });
+
+
+    })();
+
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

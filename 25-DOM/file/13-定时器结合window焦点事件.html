@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>0</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body style="height: 2000px">
+    
+    <script>
+
+        let n = 0;
+        let time
+        function t(){
+            time= setInterval(()=>{
+                document.title = ++n;
+            },50);
+        }
+
+        t();
+
+        window.onfocus = function(){
+            t();
+        };
+        window.onblur = function(){
+            clearInterval(time);
+        };
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            position: relative;
+            width: 150px;
+            height: 150px;
+            background-color: pink;
+            margin: 50px;
+        }
+        #wrap .goudan{
+            position: absolute;
+            top: 20px;
+            left: 15px;
+            width: 50px;
+            height: 50px;
+            margin: 20px;
+            background-color: #7cf9d0;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <div class="goudan">
+
+        </div>
+    </div>
+
+    <script>
+
+        let oWrap = document.getElementById("wrap");
+
+        console.log(oWrap.offsetLeft);
+        console.log(oWrap.offsetTop);
+
+        let goudan = document.querySelector("#wrap .goudan");
+        console.log(goudan.offsetLeft);
+        console.log(goudan.offsetTop);
+
+        //console.log(goudan.getBoundingClientRect());
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
