@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        html,body{
+            width: 100%;
+            height:100%
+        }
+        body{
+            overflow: hidden;
+        }
+
+        #ball{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(#fff, #ff666d);
+            border-radius: 50%;
+        }
+
+        #shadow p{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(#fff, #ff666d);
+            border-radius: 50%;
+            transform: scale(.8);
+            opacity: 0.7;
+            animation: hide .5s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes hide {
+            0%{
+                transform: scale(.8);
+                opacity: 0.7;
+            }
+            100%{
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="ball"></div>
+
+    <div id="shadow">
+    </div>
+
+    <script>
+
+        (function(){
+
+            let oBall = document.getElementById("ball");
+            let oShadow = document.getElementById("shadow");
+
+            //设置水平速度与垂直速度
+            let vL = 10;
+            let vT = 20;
+
+
+            //最大值的获取 当浏览器窗口改变大小的时候，要重新获取最大最小值
+            let maxW,maxH;
+
+            window.onresize = function x(){
+                maxW = document.documentElement.clientWidth - 50;
+                maxH = document.documentElement.clientHeight - 50;
+                return x;
+            }();
+
+
+            //动画
+            function m(){
+
+                let left = oBall.offsetLeft + vL;
+                let top = oBall.offsetTop + vT;
+
+                //有没有超过限制
+                if ( left >= maxW ){
+                    left = maxW;
+                    vL = -vL;
+                }
+                if ( left <=0 ){
+                    left = 0;
+                    vL = -vL;
+                }
+                if ( top >= maxH ){
+                    top = maxH;
+                    vT = -vT;
+                }
+                if ( top <= 0 ){
+                    top = 0;
+                    vT = -vT;
+                }
+
+                oBall.style.left = left + 'px';
+                oBall.style.top = top + 'px';
+
+                //添加阴影
+                let oP = document.createElement("p");
+                oP.style.left = left + 'px';
+                oP.style.top = top + 'px';
+                oShadow.appendChild(oP);
+                setTimeout(()=>{
+                    oShadow.removeChild(oP);
+                },500);
+
+                //隔 大概16ms 之后再次运行 m
+                requestAnimationFrame(m);
+            };
+            requestAnimationFrame(m);
+
+        })();
+
+
+
+
+        /*let maxW = document.documentElement.clientWidth - 50;
+        let maxH = document.documentElement.clientHeight - 50;
+
+        window.onresize = function(){
+            maxW = document.documentElement.clientWidth - 50;
+            maxH = document.documentElement.clientHeight - 50;
+        };*/
+
+
+        /*console.log( fn(6) );
+
+        function fn(num){
+
+            if(num===1)return 1;
+
+            return num*fn(num-1);
+        }*/
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

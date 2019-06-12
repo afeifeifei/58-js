@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body style="height: 2000px">
+
+
+
+    <script>
+
+        /*
+        事件对象：存储着和该次事件相关的一些信息
+
+
+        标准浏览器：事件函数的第一个形参就是事件对象
+
+        低版本IE：全局变量window.event
+         */
+
+        /*document.onclick = fn;
+
+        function fn(ev){
+            console.log(ev);
+        };*/
+
+        /*document.onclick = function(e){
+            console.log(e);
+        };
+
+
+        document.onclick = function(){
+            console.log(window.event);
+        };*/
+
+        document.onclick = function(ev){
+            ev = ev || window.event;
+
+            console.log(ev);
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

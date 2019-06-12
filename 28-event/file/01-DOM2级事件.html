@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        //DOM 0级事件
+        //document.onclick = function(){}
+
+        //DOM 2级事件
+        /*document.addEventListener("click",function(e){
+            console.log(1);
+        });*/
+
+
+        /*document.onclick = function(){
+            console.log(1);
+        };
+        //1000行代码
+        document.onclick = function(){
+            console.log(2);
+        };*/
+
+        /*document.onclick = function(){
+            console.log(0);
+        };
+        */
+
+        let a = function(){
+            console.log(1);
+        };
+        let b = function(){
+            console.log(2);
+        };
+
+        document.addEventListener("click",a);
+        document.addEventListener("click",b);
+
+        document.removeEventListener("click",a);
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
