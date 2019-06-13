@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        #wrap{
+            width: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+
+        <p>001</p>
+        <p>002</p>
+        <p>003</p>
+        <p>004</p>
+        <p>005</p>
+    </div>
+
+    <input type="text" id="inp1">
+    <a href="">ssss</a>
+
+
+    <script>
+
+        /*
+        onmouseenter onmouseleave
+
+        onmouseover onmouseout
+         */
+
+        /*wrap.onmouseenter = function(){
+            console.log(1);
+        };*/
+
+        /*
+            键盘事件
+                不是每个元素都能加键盘事件，能获得焦点的元素能加键盘事件(常见的有 表单标签 a标签 document window)
+
+                onkeydown  键按下  能响应所有键
+                onkeypress 键按下  只响应能键入内容的键 以及 enter
+
+                onkeyup 键抬起  响应所有键抬起
+
+
+
+            键值 ： 一个数字，键盘上每个按键都对应的有自己的键值
+         */
+
+        /*window.onkeydown = function(e){
+            console.log(e);
+        };*/
+
+        /*let inp1 = document.getElementById("inp1");
+
+        inp1.onkeydown = function(e){
+            console.log(e.keyCode);
+
+        };*/
+
+        document.onkeypress = function(e){
+            console.log(e);
+        };
+        document.onkeyup = function(e){
+            console.log(e);
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

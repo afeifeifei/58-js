@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        #wrap p{position: absolute;width: 100%;height:100%;}
+        #wrap .e{width: 5px;top: 0;right:0;background-color: red;cursor: e-resize;}
+        #wrap .s{height: 5px;bottom: 0;right:0;background-color: red;cursor: s-resize;}
+        #wrap .w{width: 5px;bottom: 0;left:0;background-color: red;cursor: w-resize;}
+        #wrap .n{height: 5px;top: 0;left:0;background-color: red;cursor: n-resize;}
+
+        #wrap .es{width: 5px;height: 5px;bottom: 0;right: 0;background-color: #2c4ff9;cursor: se-resize}
+        #wrap .ws{width: 5px;height: 5px;bottom: 0;left: 0;background-color: #2c4ff9;cursor: sw-resize}
+        #wrap .wn{width: 5px;height: 5px;top: 0;left: 0;background-color: #2c4ff9;cursor: nw-resize}
+        #wrap .en{width: 5px;height: 5px;top: 0;right: 0;background-color: #2c4ff9;cursor: ne-resize}
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+
+        <p class="e"></p>
+        <p class="w"></p>
+        <p class="n"></p>
+        <p class="s"></p>
+        <p class="es"></p>
+        <p class="ws"></p>
+        <p class="wn"></p>
+        <p class="en"></p>
+    </div>
+
+    <script>
+
+        (function(){
+            let oWrap = document.getElementById("wrap");
+
+            let aP = document.querySelectorAll("#wrap p");
+            
+            let sX,sY,sW,sH,sL,sT;
+            let nX,nY,x_,y_;
+
+            let getValue = {
+                width(bool){
+                    let width = sW + (bool?x_:-x_);
+                    width = Math.max(width,10);
+                    oWrap.style.width = width + 'px';
+                }
+                ,height(bool){
+                    let height = sH + (bool?y_:-y_);
+                    height = Math.max(height,10);
+                    oWrap.style.height = height + 'px';
+                }
+                ,left(){
+                    let left = sL + x_;
+                    left = Math.min(left,sL+sW-10);
+                    oWrap.style.left = left + 'px';
+                }
+                ,top(){
+                    let top = sT + y_;
+                    top = Math.min(top,sT+sH-10);
+                    oWrap.style.top = top + 'px';
+                }
+            };
+
+            //循环给不同的p加事件
+            aP.forEach((ele,index)=>{
+                ele.onmousedown = function(e){
+
+                    //无论是哪个p按下，都要获取初始位置
+                     sX = e.pageX;
+                     sY = e.pageY;
+
+                    //盒子相关的初始值
+                     sW = oWrap.clientWidth;
+                     sH = oWrap.clientHeight;
+                     sL = oWrap.offsetLeft;
+                     sT = oWrap.offsetTop;
+
+                    document.onmousemove = function(e){
+                        nX = e.pageX;
+                        nY = e.pageY;
+                        x_ = nX - sX;
+                        y_ = nY - sY;
+
+                        if ( index === 0 || index === 4 || index === 7 ){
+                            getValue.width(true);
+                        }
+                        if ( index === 1 || index === 5 || index === 6 ){
+                            getValue.width(false);
+                            getValue.left();
+                        }
+                        if ( index === 3 || index === 4 || index === 5 ){
+                            getValue.height(true);
+                        }
+                        if ( index === 2 || index === 7 || index === 6 ){
+                            getValue.height(false);
+                            getValue.top();
+                        }
+                    };
+                };
+            });
+
+            //统一的up事件清理move
+            document.onmouseup = function(){
+                document.onmousemove = null;
+            };
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

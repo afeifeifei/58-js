@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+
+    </div>
+
+    <script>
+
+        let oWrap = document.getElementById("wrap");
+
+        oWrap.onmousedown = function(e){
+            //获取鼠标初始位置
+            let eX = e.pageX;
+            let eY = e.pageY;
+
+            //获取wrap的初始位置
+            let sLeft = this.offsetLeft;
+            let sTop = this.offsetTop;
+
+            //等到按下事件触发了之后，再才能注册move事件
+            document.onmousemove = function(e){
+                //实时获取鼠标当前的位置
+                let nX = e.pageX;
+                let nY = e.pageY;
+
+                //计算鼠标位置的变化量
+                let x_ = nX - eX;
+                let y_ = nY - eY;
+
+                //得到盒子当前的位置
+                let left = sLeft + x_;
+                let top = sTop + y_;
+
+                //赋值css
+                oWrap.style.left = left + 'px';
+                oWrap.style.top = top + 'px';
+            };
+        };
+
+        document.onmouseup = function () {
+            //在oWrap上抬起鼠标后，移除move事件
+            document.onmousemove = null;
+        };
+
+        /*oWrap.onmousedown = function(){
+            console.log("down");
+            //等到按下事件触发了之后，再才能注册move事件
+            this.onmousemove = function(){
+                console.log("move");
+            };
+        };
+
+        oWrap.onmouseup = function () {
+            console.log("up");
+            //在oWrap上抬起鼠标后，移除move事件
+            this.onmousemove = null;
+        };*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        #wrap p{position: absolute;width: 100%;height:100%;}
+        #wrap .e{width: 5px;top: 0;right:0;background-color: red;cursor: e-resize;}
+        #wrap .s{height: 5px;bottom: 0;right:0;background-color: red;cursor: s-resize;}
+        #wrap .w{width: 5px;bottom: 0;left:0;background-color: red;cursor: w-resize;}
+        #wrap .n{height: 5px;top: 0;left:0;background-color: red;cursor: n-resize;}
+
+        #wrap .es{width: 5px;height: 5px;bottom: 0;right: 0;background-color: #2c4ff9;cursor: se-resize}
+        #wrap .ws{width: 5px;height: 5px;bottom: 0;left: 0;background-color: #2c4ff9;cursor: sw-resize}
+        #wrap .wn{width: 5px;height: 5px;top: 0;left: 0;background-color: #2c4ff9;cursor: nw-resize}
+        #wrap .en{width: 5px;height: 5px;top: 0;right: 0;background-color: #2c4ff9;cursor: ne-resize}
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+
+        <p class="e"></p>
+        <p class="w"></p>
+        <p class="n"></p>
+        <p class="s"></p>
+        <p class="es"></p>
+        <p class="ws"></p>
+        <p class="wn"></p>
+        <p class="en"></p>
+    </div>
+
+    <script>
+
+        let oWrap = document.getElementById("wrap");
+
+        let aP = document.querySelectorAll("#wrap p");
+
+        //循环给不同的p加事件
+        aP.forEach((ele,index)=>{
+            ele.onmousedown = function(e){
+
+                //无论是哪个p按下，都要获取初始位置
+                let sX = e.pageX;
+                let sY = e.pageY;
+
+                //盒子相关的初始值
+                let sW = oWrap.clientWidth;
+                let sH = oWrap.clientHeight;
+                let sL = oWrap.offsetLeft;
+                let sT = oWrap.offsetTop;
+
+                switch ( index ) {
+                    case 0: //东
+                        document.onmousemove = function(e){
+                            let nX = e.pageX;
+                            let x_ = nX - sX;
+                            let width = sW + x_;
+                            oWrap.style.width = width + 'px';
+                        };
+                        break;
+                    case 1: //西
+                        document.onmousemove = function(e){
+                            let nX = e.pageX;
+                            let x_ = nX - sX;
+                            let width = sW - x_;
+                            let left = sL + x_;
+                            oWrap.style.width = width + 'px';
+                            oWrap.style.left = left + 'px';
+                        };
+                        break;
+                    case 2: //北
+                        document.onmousemove = function(e){
+                            let nY = e.pageY;
+                            let y_ = nY - sY;
+                            let height = sH - y_;
+                            let top = sT + y_;
+                            oWrap.style.height = height + 'px';
+                            oWrap.style.top = top + 'px';
+                        };
+                        break;
+                    case 3: //南
+                        document.onmousemove = function(e){
+                            let nY = e.pageY;
+                            let y_ = nY - sY;
+                            let height = sH + y_;
+                            oWrap.style.height = height + 'px';
+                        };
+                        break;
+                    case 4: //东南
+                        document.onmousemove = function(e){
+                            let nX = e.pageX;
+                            let nY = e.pageY;
+
+                            let x_ = nX - sX;
+                            let y_ = nY - sY;
+
+                            let width = sW + x_;
+                            let height = sH + y_;
+
+                            oWrap.style.width = width + 'px';
+                            oWrap.style.height = height + 'px';
+                        };
+                        break;
+                    case 5://西南
+                        document.onmousemove = function(e){
+                            let nX = e.pageX;
+                            let x_ = nX - sX;
+                            let width = sW - x_;
+                            let left = sL + x_;
+                            oWrap.style.width = width + 'px';
+                            oWrap.style.left = left + 'px';
+
+                            let nY = e.pageY;
+                            let y_ = nY - sY;
+                            let height = sH + y_;
+                            oWrap.style.height = height + 'px';
+                        };
+                        break;
+                    case 6://西北
+                        document.onmousemove = function(e) {
+                            let nX = e.pageX;
+                            let x_ = nX - sX;
+                            let width = sW - x_;
+                            let left = sL + x_;
+                            oWrap.style.width = width + 'px';
+                            oWrap.style.left = left + 'px';
+                            let nY = e.pageY;
+                            let y_ = nY - sY;
+                            let height = sH - y_;
+                            let top = sT + y_;
+                            oWrap.style.height = height + 'px';
+                            oWrap.style.top = top + 'px';
+                        };
+                        break;
+                    case 7://东北
+                        document.onmousemove = function(e){
+                            let nX = e.pageX;
+                            let x_ = nX - sX;
+                            let width = sW + x_;
+                            oWrap.style.width = width + 'px';
+                            let nY = e.pageY;
+                            let y_ = nY - sY;
+                            let height = sH - y_;
+                            let top = sT + y_;
+                            oWrap.style.height = height + 'px';
+                            oWrap.style.top = top + 'px';
+                        };
+                        break;
+                }
+
+            };
+        });
+
+
+        //统一的up事件清理move
+        document.onmouseup = function(){
+            document.onmousemove = null;
+        };
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
