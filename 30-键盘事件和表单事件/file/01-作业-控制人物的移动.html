@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            width: 52px;
+            height: 60px;
+        }
+        #wrap img{
+            display: none;
+        }
+
+        #wrap.left img.left{
+            display: block;
+        }
+        #wrap.right img.right{
+            display: block;
+        }
+        #wrap.up img.up{
+            display: block;
+        }
+        #wrap.down img.down{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="wrap" class="down">
+        <img class="left" src="img/left.png">
+        <img class="right" src="img/right.png">
+        <img class="up" src="img/up.png">
+        <img class="down" src="img/down.png">
+    </div>
+    <script>
+
+        (function(){
+
+            let oWrap = document.getElementById("wrap");
+
+            document.onkeydown = function(e){
+                let keyCode = e.keyCode;
+
+                switch ( keyCode ) {
+                    case 87: //W
+                    case 38:
+                        oWrap.className = "up";
+                        oWrap.style.top = oWrap.offsetTop - 10 + 'px';
+                        break;
+                    case 83: //S
+                    case 40:
+                        oWrap.className = "down";
+                        oWrap.style.top = oWrap.offsetTop + 10 + 'px';
+                        break;
+                    case 65: //A
+                    case 37:
+                        oWrap.className = "left";
+                        oWrap.style.left = oWrap.offsetLeft - 10 + 'px';
+                        break;
+                    case 68: //D
+                    case 39:
+                        oWrap.className = "right";
+                        oWrap.style.left = oWrap.offsetLeft + 10 + 'px';
+                        break;
+                }
+            };
+
+
+        })();
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

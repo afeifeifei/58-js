@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <input type="text" id="test" name="a">
+
+    <input type="radio" name="bb" id="radio1">男
+    <input type="radio" name="bb" id="radio2">女
+
+    <input type="checkbox" name="a1" id="checkbox1">rap
+    <input type="checkbox" name="a2" id="checkbox2">唱歌
+    <input type="checkbox" name="a3" id="checkbox3">跳舞
+    <input type="checkbox" name="a3" id="checkbox4">篮球
+
+    <select name="c" id="select">
+        <option value="aaa">aaa</option>
+        <option value="bbb">bbb</option>
+        <option value="ccc">ccc</option>
+        <option value="ddd">ddd</option>
+    </select>
+
+    <script>
+
+        /*let oTest = document.getElementById("test");
+
+
+        oTest.onfocus = function(){
+            console.log("我获得焦点了！！ ^.^");
+        };
+
+        oTest.onblur = function(){
+            console.log("我失去焦点了！！o(╥﹏╥)o");
+        };
+
+        oTest.onchange = function(){
+            console.log("onchange触发了！");
+        };*/
+
+        /*radio1.onchange = function(){
+            console.log("1的change触发了");
+        };
+        radio2.onchange = function(){
+            console.log("2的change触发了");
+        };*/
+
+        /*checkbox1.onchange = function(){
+            console.log("1的change触发了");
+        };
+        checkbox2.onchange = function(){
+            console.log("2的change触发了");
+        };
+        checkbox3.onchange = function(){
+            console.log("3的change触发了");
+        };
+        checkbox4.onchange = function(){
+            console.log("4的change触发了");
+        };*/
+
+        select.onchange = function(){
+            console.log("select的change触发了");
+            console.log(this.value);
+        };
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

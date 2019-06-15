@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            width: 52px;
+            height: 60px;
+            background-color: pink;
+        }
+        #wrap img{
+            display: none;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+    </div>
+    <script>
+
+        (function(){
+
+            let oWrap = document.getElementById("wrap");
+
+            let timer = {};
+
+            let move  = {
+                up(){
+                    oWrap.style.top = oWrap.offsetTop - 5 + 'px';
+                    timer.up = requestAnimationFrame(this.up.bind(this));
+                }
+                ,right(){
+                    oWrap.style.left = oWrap.offsetLeft + 5 + 'px';
+                    timer.right = requestAnimationFrame(this.right.bind(this));
+                }
+                ,left(){
+                    oWrap.style.left = oWrap.offsetLeft - 5 + 'px';
+                    timer.left = requestAnimationFrame(this.left.bind(this));
+                }
+                ,down(){
+                    oWrap.style.top = oWrap.offsetTop + 5 + 'px';
+                    timer.down = requestAnimationFrame(this.down.bind(this));
+                }
+            };
+
+            function getDir(keyCode){
+                let dir = "";
+                switch ( keyCode ) {
+                    case 87: //W
+                    case 38:
+                        dir = "up";
+                        break;
+                    case 83: //S
+                    case 40:
+                        dir = "down";
+                        break;
+                    case 65: //A
+                    case 37:
+                        dir = "left";
+                        break;
+                    case 68: //D
+                    case 39:
+                        dir = "right";
+                        break;
+                }
+                return dir;
+            }
+
+            //按下
+            document.onkeydown = function(e){
+                let dir = getDir(e.keyCode);
+                if(!dir || timer[dir] !== undefined)return;
+                move[dir]();
+            };
+
+            //抬起
+            document.onkeyup = function(e){
+                let dir = getDir(e.keyCode);
+                if ( !dir )return;
+                cancelAnimationFrame(timer[dir]);
+                timer[dir] = undefined;
+            };
+        })();
+
+
+
+        /*switch ( keyCode ) {
+            case 87: //W
+            case 38:
+                if ( timer.up === undefined )
+                    move.up();
+                break;
+            case 83: //S
+            case 40:
+                if ( timer.down === undefined )
+                    move.down();
+                break;
+            case 65: //A
+            case 37:
+                if ( timer.left === undefined )
+                    move.left();
+                break;
+            case 68: //D
+            case 39:
+                if ( timer.right === undefined )
+                    move.right();
+                break;
+        }*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
