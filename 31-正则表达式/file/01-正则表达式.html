@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        正则表达式
+            用来高效便捷的处理字符串
+         */
+
+        let str = "阿飞456朝歌789言心1590"; // ["456","789","1590"]
+        //let str = "ko456fdsf7d9gsg90"; // ["456","7","9","90"]
+
+        console.log(fn(str));
+
+
+        function fn(str){
+            return str.match(/\d+/g);
+        }
+
+        /*function fn(str){
+            let arr = [];
+
+            let s = "";
+            [...str].forEach(item=>{
+                if ( !isNaN(item) ){
+                    //是数字的话
+                    // console.log(item);
+                    s += item;
+                }else{
+                    s && arr.push(s);
+                    s = "";
+                }
+            });
+
+            s && arr.push(s);
+
+            return arr;
+        }*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

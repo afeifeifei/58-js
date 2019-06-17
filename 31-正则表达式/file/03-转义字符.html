@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        \n \t \r
+
+        \ 符号跟上某些字母在正则表达式的定义中有特殊意义
+            \d 数字
+            \D 非数字
+
+            \s 空格/换行符等
+            \S 非空格
+
+            \w 字符（数字 字母 _）
+            \W 非字符
+
+            \b 起始位置/结束位置/分隔符（除了\w之外的字符都算是分隔符）
+            \B 非独立部分
+
+
+         */
+
+        /*let str = "阿\n飞";
+
+        let reg = /\n飞/;
+
+        console.log(reg.test(str));
+*/
+
+        /*let str = "4aa13";
+
+        let reg = /\d\d/;*/
+
+        /*let str = "1aa1";
+        let reg = /\d\D/;*/
+
+
+        /*let str = "\r";
+        let reg = /\s/;*/
+
+        /*let str = "+";
+        let reg = /\w/;*/
+
+        /*let str = "Hu is a beautiful girl.";
+        let reg = /\bHu\b/;*/
+
+        //console.log( reg.test(str) );
+
+
+        let str = "'";
+
+        let reg = /'/;
+
+        console.log( reg.test(str) );
+    </script>
+</body>
+</html>
+
+
+
+
+
+

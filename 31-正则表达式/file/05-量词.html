@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        量词
+            基础写法
+                {n} 匹配 n 个
+                {n,m} 匹配n~m个，包含n也包含m (默认往多的去匹配，默认贪婪)
+                {n,} 匹配n~无穷大
+
+            特殊量词的简写：
+                {1,}     +
+                {0,}     *
+                {0,1}    ?
+
+            贪婪和惰性
+                在量词后面加个?就代表惰性量词
+
+
+
+
+         */
+
+        /*let str = "阿飞老师的手机号是：15578545454";
+        //let reg = /\d{11}/g;
+        // let reg = /\d{2,4}/g;
+        let reg = /\d{2,}/g;*/
+
+        let str = "言心酱是一名潭州教育的在线授课讲师。";
+        let reg = /言心酱?/;
+        //let reg = /言心酱??/;
+
+        /*let str = "123456";
+        let reg = /\d{2,}?/g;*/
+
+
+        console.log( str.match(reg) );
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

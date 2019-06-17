@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        定义正则表达式的方法：
+            //
+            new RegExp()
+
+        使用正则：
+            正则.test(字符串)  检测字符串中存不存在对应的正则规则，存在返回true，不存在返回false
+         */
+
+        //let reg = /abc/;
+
+
+
+
+        /*let str = "fffabc";
+        let r = /abc/;
+
+        console.log( r.test(str) );*/
+
+        let x = "fbc";
+
+        let str = "fffabc";
+        let r = new RegExp(x);
+
+
+        console.log( r.test(str) );
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
