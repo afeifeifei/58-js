@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        ^ 开始部分
+        $ 结束部分
+        . 匹配任意字符（除了\n \r等换行字符）
+        | 或者
+         */
+
+        /*let str = 'a';
+
+        let reg = /^a$/;*/
+
+        /*let str = "\n";
+        let reg = /./;*/
+
+        /*let str = "小浪弟弟老师是潭州教育的讲师。";
+        let reg = /阿飞哥哥|小浪弟弟/;*/
+
+        let str = "小浪哥哥老师是潭州教育的讲师。";
+        let reg = /(阿飞|小浪)(哥哥|弟弟)/;
+
+
+
+        ///阿飞|^小浪/
+
+        console.log(str.match(reg));
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

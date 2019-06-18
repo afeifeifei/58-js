@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*let str = "阿飞老师是潭州教育的老师。阿飞老师还挺帅。";
+
+        let reg = /阿飞/g;
+        //console.log(str.match(reg));
+
+
+        //替换
+        let newStr = str.replace(reg,"小浪");
+
+        console.log(newStr);
+
+        console.log(str);*/
+
+        let str = "操你妈，你玩的是个鸡巴啥";
+
+        let reg = /傻逼|鸡巴|操你妈|你妈|你爸/g;
+
+        let newStr = str.replace(reg,$0=>{
+            let len = $0.length;
+
+            return "".padEnd(len,"*");
+        });
+
+        console.log(newStr);
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
