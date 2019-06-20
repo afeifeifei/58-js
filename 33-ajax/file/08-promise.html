@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script>
+
+        /*let bool = [];
+
+        setTimeout(()=>{
+            console.log(1);
+
+            if ( bool[1] ){
+                a();
+            } else{
+                bool[0] = true;
+            }
+        },1000);
+
+
+        setTimeout(()=>{
+
+
+            console.log(2);
+
+            if ( bool[0] ){
+                a();
+            } else{
+                bool[1] = true;
+            }
+
+        },2000);
+
+
+        function a(){
+            console.log("两人都完成了");
+        }*/
+
+        let promise1 =  new Promise((res,rej)=>{
+            setTimeout(()=>{
+                console.log(1);
+                res();
+            },1000);
+        }).then(()=>{
+
+        });
+
+        let promise2 = new Promise((res,rej)=>{
+            setTimeout(()=>{
+                console.log(2);
+                res();
+            },2000);
+        }).then(()=>{
+
+
+        });
+
+
+        Promise
+            .all([promise1,promise2])
+            .then(()=>{
+                console.log("两人都完成了");
+            });
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

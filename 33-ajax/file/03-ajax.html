@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        let xhr;
+
+        //创建xhr对象 和 兼容
+        if ( window.XMLHttpRequest ){
+            xhr = new XMLHttpRequest();
+        } else{//兼容IE
+            try{
+                xhr = new ActiveXObject("Msxml2.XMLHTTP")
+            }catch ( e ) {
+                xhr = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+
+        //配置和发送请求
+        xhr.open("POST","http://api.afei.fun",true); //配置信息
+        xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded"); //设置数据格式
+        xhr.send("aaa=100&&bbb=200"); //发送
+
+        //监听请求状态
+        xhr.onreadystatechange = function(){
+            if ( xhr.readyState === 4 ){
+                //代表请求完成
+                if ( xhr.status>=200 && xhr.status < 300 ){
+                    console.log(xhr.responseText); //这是后端给你返回的数据
+                    console.log(JSON.parse(xhr.responseText));
+                } else{
+                    console.log("请求失败~");
+                }
+
+            }
+        };
+
+        /*
+        请求状态码：
+            0
+            1
+            2
+            3
+            4
+
+        http状态码：
+            100+
+
+            200+
+
+            300+
+            400+
+            500+
+         */
+
+
+        //……
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

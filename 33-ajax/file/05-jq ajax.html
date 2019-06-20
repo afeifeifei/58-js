@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        table{
+            border-collapse: collapse;
+
+        }
+    </style>
+</head>
+<body>
+
+    <h1>这是一个非常简单的页面</h1>
+    <input type="button" value="按钮" id="btn">
+
+    <table border="1" id="table">
+        <tr>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+        </tr>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script>
+
+
+        (function(){
+
+            let table = document.getElementById("table");
+            let btn = document.getElementById("btn");
+
+            btn.onclick = function(){
+                //请求数据
+                $.ajax({
+                    url : "http://api.afei.fun"
+                    ,dataType : "json"
+                    ,success (msg) {
+                        console.log(msg);
+                        createDOM(msg);
+                    }
+                });
+            };
+
+
+            function createDOM(msg){
+                msg = msg.resData;
+
+                let html = "";
+                msg.forEach(item=>{
+                    html += `<tr>
+                            <td>${item.name}</td>
+                            <td>${item.age}</td>
+                            <td>${item.sex?"男":"女"}</td>
+                        </tr>`;
+                });
+
+                table.innerHTML += html;
+            }
+
+
+        })();
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
