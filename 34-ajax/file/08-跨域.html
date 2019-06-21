@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+
+        /*
+        跨域：
+
+            协议：http  https
+            ip：域名   111.111.111.111
+            端口：
+         */
+
+
+        axios
+            .post(
+                "http://localhost:63342/58-js/34-ajax/file/1.txt"
+                // "https://www.baidu.com"
+            )
+            .then(res=>{
+                console.log(res);
+            })
+            .catch(err=>{
+                console.log(err);
+            });
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

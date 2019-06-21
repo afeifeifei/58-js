@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+
+        /*
+        axios
+            可以
+                在请求发送之前
+                在请求成功之后
+            进行拦截
+         */
+
+        //发送请求之前的 拦截配置
+        axios.interceptors.request.use(config=>{
+
+            config.method = "POST";
+            config.params.afei = "789456";
+
+            return config;
+        });
+
+
+        axios
+            .get(
+                "http://api.afei.fun"
+                ,{params:{a:123}}
+            )
+            .then(res=>{
+                console.log(res);
+            });
+
+        axios
+            .get(
+                "http://api.afei.fun"
+                ,{params:{b:999}}
+            )
+            .then(res=>{
+                console.log(res);
+            });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

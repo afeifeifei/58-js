@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+    
+    <script>
+
+        /*
+        fetch
+            ES6原生就支持，基于Promise的ajax代替方案
+
+        axios   （推荐这个）
+            是别人封装好的，一个基于Promise的ajax代替方案
+         */
+
+        fetch("http://api.afei.fun",{method : "post"})
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data); //这是最终拿到的数据
+            });
+
+
+
+
+        /*function x(){
+            return new Promise(()=>{});
+        }
+
+
+        x()
+            .then()*/
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

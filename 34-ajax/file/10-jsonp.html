@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+
+    <link rel="stylesheet" href="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/css/super_min_353cb37f.css">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            margin: 100px auto;
+            width: 400px;
+            height: 40px;
+        }
+        #wrap .search{
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            text-indent: 1em;
+        }
+        #wrap .keywords{
+            box-sizing: border-box;
+            width: 100%;
+            border: 1px solid #d5d5d5;
+        }
+        #wrap .keywords li{
+            width: 100%;
+            height: 25px;
+            line-height: 25px;
+            font-size: 12px;
+        }
+        #wrap .keywords li a{
+            color: #000;
+            display: block;
+            text-decoration: none;
+        }
+        #wrap .keywords li a:hover{
+            background-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="wrap">
+        <input type="text" class="search">
+        <ul class="keywords">
+            <!--<li><a href="">xxxxxx</a></li>
+            <li><a href="">xxxxxx</a></li>
+            <li><a href="">xxxxxx</a></li>
+            <li><a href="">xxxxxx</a></li>-->
+        </ul>
+    </div>
+
+    <script>
+
+        function fly({s}){
+            let oKey = document.querySelector("#wrap .keywords");
+
+            let html = "";
+            s && s.forEach(item=>{
+                html += `<li><a href="https://www.baidu.com/s?wd=${item}">${item}</a></li>`
+            });
+
+            oKey.innerHTML = html;
+        }
+
+        (function(){
+
+            let oInp = document.querySelector("#wrap .search");
+
+            oInp.oninput = ev;
+            oInp.onfocus = ev;
+
+            function ev(e){
+                //获取当前input的输入内容
+                let val = this.value;
+
+                //确定联想关键词的地址
+                let url = "https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+val+"&cb=fly";
+
+                //引入js文件
+                let script = document.createElement("script");
+                script.src = url;
+                document.body.appendChild(script);
+            };
+
+        })();
+
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
