@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <p>阿飞</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script>
+
+        /*
+         * append
+         * prepend
+         * after
+         * before
+         *
+         *
+         * empty
+         * remove / detach
+         */
+
+        // $("#wrap").append("<p>99</p>");
+
+        /*let x = document.createElement("p");
+        x.innerText = "88";
+
+        $("#wrap").append(x);*/
+
+        /*let x = document.createElement("p");
+        x.innerText = "88";
+
+        let $x = $(x);*/
+
+        let $x = $("<p>88</p>");
+
+        $x.css("color",'red');
+
+        //$("#wrap").append($x);
+        $x.appendTo( $("#wrap") );
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+

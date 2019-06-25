@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+        
+    </style>
+</head>
+<body>
+
+    <div id="wrap" goudan="999">
+        123
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script>
+        /*
+
+        * 传入两个字符串参数   -   设置的意思
+        * 传入一个字符串参数   -   取值的意思
+        * 传入一个对象        -   设置多组属性的意思
+        *
+        * 传入字符串和函数     -   用函数的返回值来代替原本应该传入的字符串值
+
+         */
+
+        let $wrap = $("#wrap");
+/*
+
+        $wrap.attr("afei","阿飞");
+
+
+        console.log( $wrap.attr("goudan") );*/
+
+        /*$wrap.attr({
+            afei : "阿飞"
+            ,dachui : "888"
+        });*/
+
+        //$wrap.removeAttr("goudan");
+
+
+        $wrap.attr("afei",function(){
+            let a = "阿";
+            let b = "飞";
+
+            return a+b;
+        });
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
