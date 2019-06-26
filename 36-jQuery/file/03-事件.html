@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #wrap{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="wrap">
+        <p>0001</p>
+        <p>0002</p>
+        <p>0003</p>
+        <p>0004</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script>
+
+
+        $(function(){
+
+            let $wrap = $("#wrap");
+
+            /*$wrap.on("click" , function(){
+                alert(1);
+            });*/
+            /*$wrap.on({
+                click(){
+                    console.log("click");
+                }
+                ,mouseenter(){
+                    console.log("enter");
+                }
+            });*/
+
+            /*$wrap.on("click","p",function(){
+
+                console.log($(this).html());
+
+            });*/
+
+            /*$wrap.click(function () {
+                console.log(1);
+            });
+
+            $wrap.off("click");*/
+
+            /*$wrap.click(function () {
+                console.log(1);
+            });
+            $wrap.click(function () {
+                console.log(2);
+            });*/
+
+            $wrap.on("click.goudan",function(){
+                console.log(1);
+            });
+            $wrap.on("click.dachui",function(){
+                console.log(2);
+            });
+
+
+            $wrap.off("click.goudan");
+
+
+
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
