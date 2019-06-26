@@ -245,7 +245,7 @@ fetch与axios都使用了ES6的Promise方案来解决回调地狱的问题，所
   	});
   
   //还可以只为该实例设置拦截
-  myInstance.interceptors.request.use(/*……*/)4.跨域与jsonp
+  myInstance.interceptors.request.use(/*……*/)
   ```
 
 ### 4.跨域与jsonp
