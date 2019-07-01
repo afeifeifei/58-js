@@ -1,0 +1,173 @@
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  font-size: 0;
+  overflow: hidden;
+  clear: both;
+}
+.center-p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#footer {
+  margin: -20px auto;
+  width: 1226px;
+  height: 504px;
+}
+#footer .service {
+  height: 80px;
+  border-bottom: 1px solid #e0e0e0;
+}
+#footer .service ul > li {
+  float: left;
+  margin-top: 27px;
+  width: 245px;
+  height: 25px;
+  border-right: 1px solid #e0e0e0;
+  text-align: center;
+  font-size: 16px;
+  line-height: 25px;
+  color: #616161;
+}
+#footer .service ul > li:nth-child(5) {
+  border-right: none;
+}
+#footer .service ul > li a .ver {
+  vertical-align: middle;
+}
+#footer .service ul > li a i {
+  margin-right: 6px;
+  font-size: 26px;
+}
+#footer .service ul > li:hover {
+  color: #ff6700;
+}
+#footer .nav-footer {
+  padding: 40px 0;
+  height: 192px;
+  background-color: #fff;
+}
+#footer .nav-footer dl {
+  float: left;
+  width: 160px;
+  height: 112px;
+}
+#footer .nav-footer dl dt {
+  margin: -1px 0 26px;
+  font-size: 14px;
+  color: #424242;
+}
+#footer .nav-footer dl dd {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #757575;
+}
+#footer .nav-footer dl dd a:hover {
+  color: #ff6700;
+}
+#footer .nav-footer .right-part {
+  float: left;
+  width: 252px;
+  height: 112px;
+  text-align: center;
+  border-left: 1px solid #e0e0e0;
+}
+#footer .nav-footer .right-part .phone {
+  margin: 0 0 5px;
+  font-size: 22px;
+  line-height: 1;
+  color: #ff6700;
+}
+#footer .nav-footer .right-part .intro {
+  margin: 0 0 16px;
+  font-size: 12px;
+  color: #616161;
+}
+#footer .nav-footer .right-part a {
+  display: inline-block;
+  width: 118px;
+  height: 28px;
+  border: 1px solid #ff6700;
+  background: #fff;
+  color: #ff6700;
+  font-size: 12px;
+  line-height: 28px;
+}
+#footer .nav-footer .right-part a i {
+  margin-right: 5px;
+  font-size: 14px;
+}
+#footer .nav-footer .right-part a:hover {
+  background-color: #ff6700;
+  color: #fff;
+}
+#footer .bottom {
+  padding: 30px 0;
+  width: 1226px;
+  height: 232px;
+  background-color: #fafafa;
+}
+#footer .bottom .logo {
+  float: left;
+  margin-right: 10px;
+  width: 57px;
+  height: 57px;
+  background: #ff6700 url("../images/mi-logo.png") no-repeat center;
+}
+#footer .bottom .links {
+  float: left;
+  width: 1159px;
+  height: 19px;
+  color: #757575;
+  line-height: 18px;
+  font-size: 12px;
+}
+#footer .bottom .links span {
+  color: #b0b0b0;
+}
+#footer .bottom .links a:hover {
+  color: #ff6700;
+}
+#footer .bottom .record {
+  float: left;
+  width: 1159px;
+  height: 72px;
+  font-size: 12px;
+  color: #b0b0b0;
+  line-height: 18px;
+}
+#footer .bottom .record a:hover {
+  color: #ff6700;
+}
+#footer .bottom .info-links {
+  float: left;
+  margin: 4px 0 15px 0;
+  padding-left: 67px;
+  width: 100%;
+  height: 28px;
+}
+#footer .bottom .info-links img {
+  width: 85px;
+  height: 28px;
+}
+#footer .bottom .slogan {
+  float: left;
+  margin: 30px 479px 0;
+  width: 267px;
+  height: 19px;
+  background-image: url("../images/bottom/slogan2016.png");
+}

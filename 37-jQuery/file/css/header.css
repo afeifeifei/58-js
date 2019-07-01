@@ -1,0 +1,198 @@
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  font-size: 0;
+  overflow: hidden;
+  clear: both;
+}
+.center-p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#site-topbar {
+  width: 100%;
+  height: 40px;
+  background-color: #333;
+}
+#site-topbar .header {
+  margin: 0 auto;
+  width: 1226px;
+  height: 100%;
+}
+#site-topbar .header .nav-left {
+  float: left;
+  width: 780px;
+  height: 100%;
+}
+#site-topbar .header .nav-left li {
+  float: left;
+  height: 100%;
+  font-size: 12px;
+  color: #b0b0b0;
+}
+#site-topbar .header .nav-left li a {
+  display: inline-block;
+  padding: 12px 0;
+}
+#site-topbar .header .nav-left li span {
+  margin: 0 6px;
+  color: #424242;
+}
+#site-topbar .header .nav-left .download {
+  position: relative;
+}
+#site-topbar .header .nav-left .download .qr-code {
+  display: none;
+  position: absolute;
+  left: -45px;
+  top: 40px;
+  z-index: 8;
+  box-sizing: border-box;
+  padding: 20px 20px 15px;
+  width: 128px;
+  height: 154px;
+  background: #fff url("../images/download.png") no-repeat 20px 20px;
+  background-size: 88px 88px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+#site-topbar .header .nav-left .download .qr-code a {
+  padding-top: 100px;
+  color: #333;
+  font-size: 14px;
+}
+#site-topbar .header .nav-left .download .qr-code::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -10px;
+  width: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent #fff;
+  border-top: none;
+}
+#site-topbar .header .nav-left .download:hover .qr-code {
+  display: block;
+}
+#site-topbar .header .nav-left li:hover {
+  color: #fff;
+}
+#site-topbar .header .nav-right {
+  float: left;
+  width: 780px;
+  height: 100%;
+  float: right;
+  width: 276px;
+}
+#site-topbar .header .nav-right li {
+  float: left;
+  height: 100%;
+  font-size: 12px;
+  color: #b0b0b0;
+}
+#site-topbar .header .nav-right li a {
+  display: inline-block;
+  padding: 12px 0;
+}
+#site-topbar .header .nav-right li span {
+  margin: 0 6px;
+  color: #424242;
+}
+#site-topbar .header .nav-right .download {
+  position: relative;
+}
+#site-topbar .header .nav-right .download .qr-code {
+  display: none;
+  position: absolute;
+  left: -45px;
+  top: 40px;
+  z-index: 8;
+  box-sizing: border-box;
+  padding: 20px 20px 15px;
+  width: 128px;
+  height: 154px;
+  background: #fff url("../images/download.png") no-repeat 20px 20px;
+  background-size: 88px 88px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+#site-topbar .header .nav-right .download .qr-code a {
+  padding-top: 100px;
+  color: #333;
+  font-size: 14px;
+}
+#site-topbar .header .nav-right .download .qr-code::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -10px;
+  width: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent transparent #fff;
+  border-top: none;
+}
+#site-topbar .header .nav-right .download:hover .qr-code {
+  display: block;
+}
+#site-topbar .header .nav-right li:hover {
+  color: #fff;
+}
+#site-topbar .header .nav-right .shopping-cart {
+  position: relative;
+  float: right;
+  width: 122px;
+  height: 100%;
+  background-color: #424242;
+  font-size: 12px;
+  color: #b0b0b0;
+  line-height: 40px;
+  text-align: center;
+}
+#site-topbar .header .nav-right .shopping-cart a {
+  display: block;
+}
+#site-topbar .header .nav-right .shopping-cart a i {
+  margin-right: 3px;
+}
+#site-topbar .header .nav-right .shopping-cart .cart-menu {
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 40px;
+  width: 318px;
+  height: 0px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 100px;
+  z-index: 666;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  transition: 0.2s linear;
+}
+#site-topbar .header .nav-right .shopping-cart .cart-menu p {
+  color: #424242;
+}
+#site-topbar .header .nav-right .shopping-cart:hover {
+  background-color: #fff;
+  color: #ff6700;
+}
+#site-topbar .header .nav-right .shopping-cart:hover .cart-menu {
+  height: 100px;
+}

@@ -1,0 +1,167 @@
+// 导入样式初始化
+@import "../css/reset.css";
+
+// 定义一个页面宽度的变量
+@page-width: 1226px;
+
+// 盒子margin居中的变量
+.center(@a){
+    margin: (@a) auto;
+}
+
+
+// 左浮动
+.fl{
+    float: left;
+}
+
+// 右浮动
+.fr{
+    float: right;
+}
+
+// 清除浮动
+.clearfix::after{
+    content: ".";
+    display: block;
+    height: 0;
+    font-size: 0;
+    overflow: hidden;
+    clear: both;
+}
+
+//定位居中
+.center-p{
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+// 文本超出显示省略号
+.ellipsis{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ellipsis(@b){
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @b;
+    -webkit-box-orient: vertical;
+}
+
+#site-topbar{
+    width: 100%;
+    height: 40px;
+    background-color: #333;
+    .header{
+        .center(0);
+        width: @page-width;
+        height: 100%;
+        .nav-left{
+            .fl;
+            width: 780px;
+            height: 100%;
+            li{
+                .fl;
+                height: 100%;
+                font-size: 12px;
+                color: #b0b0b0;
+                a{
+                    display: inline-block;
+                    padding: 12px 0;
+                }
+                span{
+                    margin: 0 6px;
+                    color: #424242;
+                }
+            }
+            .download{
+                position: relative;
+                .qr-code{
+                    display: none;
+                    position: absolute;
+                    left: -45px;
+                    top: 40px;
+                    z-index: 8;
+                    box-sizing: border-box;
+                    padding: 20px 20px 15px;
+                    width: 128px;
+                    height: 154px;
+                    background: #fff url("../images/download.png") no-repeat 20px 20px;
+                    background-size: 88px 88px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+                    a{
+                        padding-top: 100px;
+                        color: #333;
+                        font-size: 14px;
+                    }
+                }
+                .qr-code::before{
+                    content: "";
+                    .center-p;
+                    top: -10px;
+                    width: 0;
+                    border-style: solid;
+                    border-width: 10px;
+                    border-color: transparent transparent #fff;
+                    border-top: none;
+                }
+                &:hover .qr-code{
+                    display: block;
+                }
+            }
+            li:hover{
+                color: #fff;
+            }
+        }
+        .nav-right{
+            .nav-left;
+            float: right;
+            width: 276px;
+            .shopping-cart{
+                position: relative;
+                float: right;
+                width: 122px;
+                height: 100%;
+                background-color: #424242;
+                font-size: 12px;
+                color: #b0b0b0;
+                line-height: 40px;
+                text-align: center;
+                a{
+                    display: block;
+                    i{
+                        margin-right: 3px;
+                    }
+                }
+                .cart-menu{
+                    overflow: hidden;
+                    position: absolute;
+                    right: 0;
+                    top: 40px;
+                    width: 318px;
+                    height: 0px;
+                    background-color: #fff;
+                    text-align: center;
+                    line-height: 100px;
+                    z-index: 666;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+                    transition: 0.2s linear;
+                    p{
+                        color: #424242;
+                    }
+                }
+                &:hover{
+                    background-color: #fff;
+                    color: #ff6700;
+                    .cart-menu{
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }
+}

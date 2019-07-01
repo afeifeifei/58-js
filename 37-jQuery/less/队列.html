@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        li{
+            float: left;
+            width: 100px;
+            height: 30px;
+            border-right: 1px solid #eee;
+            background-color: #f60;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <script>
+
+        $("li").hover(function(){
+            $(this).stop().animate({
+                height : 200
+            },800);
+        },function(){
+            $(this).stop().animate({
+                height : 30
+            },800);
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
