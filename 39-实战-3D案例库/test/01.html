@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>3D</title>
+    <meta name="Author" content="阿飞飞">
+    <style>
+        body{font-family: "Microsoft YaHei",serif;user-select:none;}
+        body,dl,dd,p,h1,h2,h3,h4,h5,h6{margin:0;}
+        ol,ul,li{margin:0;padding:0;list-style:none;}
+        img{border:none;}
+
+        #main{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+            border: 1px solid red;
+
+            perspective: 800px; /*构建3D   景深*/
+        }
+        #main .xx{
+            position: absolute;
+            top:50%;
+            left: 50%;
+            width: 100px;
+            height: 100px;
+            margin-top: -50px;
+            margin-left: -50px;
+            border: 1px solid green;
+        }
+        #main .goudan{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            /*transform: rotateY(0deg);*/
+            /*transform: translate3D(0px,0px,0px);*/
+            transform: rotateY(60deg) translateZ(100px);
+            transform-style: preserve-3d; /*构建3D    变换风格*/
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">
+
+        <div class="xx">
+            <div class="goudan">
+                阿飞
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
