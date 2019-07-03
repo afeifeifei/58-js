@@ -77,7 +77,6 @@
             this.onmousemove = null;
 
             //惯性
-            console.log(x_,y_);
 
             !function m(){
                 x_ *= 0.95;
